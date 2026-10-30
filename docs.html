@@ -1,0 +1,908 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>ORBIT — полная документация</title><style>
+:root{color-scheme:light;--paper:#fbfaf6;--ink:#17221c;--muted:#526157;--line:#d4ddd2;--accent:#365e30;--card:#eef2e9;--code:#e9eee5}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:5rem}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 'Avenir Next','Trebuchet MS',sans-serif}a{color:var(--accent);text-underline-offset:3px}header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 28px;display:flex;align-items:center;gap:20px}header strong{letter-spacing:3px;font-size:21px}header small{color:var(--muted)}header input{margin-left:auto;max-width:420px;width:40%;padding:10px 14px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);font:inherit;font-size:14px}button{background:var(--accent);color:white;border:0;border-radius:6px;padding:11px 14px;cursor:pointer;font:inherit;font-size:13px}.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1560px;margin:auto}aside{position:sticky;top:80px;align-self:start;height:calc(100vh - 80px);overflow:auto;border-right:1px solid var(--line);padding:24px 18px}aside a{display:block;color:var(--ink);text-decoration:none;padding:9px 10px;border-radius:5px;font-size:13px;line-height:1.4}aside a:hover{background:var(--card)}aside .caption{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:2px;padding:0 10px 12px}main{min-width:0;padding:35px 44px 80px;max-width:1240px}.intro{font:42px/1.15 Georgia,serif;margin:0 0 15px}.subtitle{color:var(--muted);font-size:14px}.doc-section{padding:25px 0 40px;border-bottom:1px solid var(--line)}h2{font:34px/1.25 Georgia,serif;margin:22px 0}h3{font-size:21px;line-height:1.35;margin:34px 0 13px}h4{font-size:18px}p{margin:12px 0 16px}li{margin:8px 0}code{font:12px/1.6 ui-monospace,'SFMono-Regular',monospace;background:var(--code);border-radius:3px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#16221b;color:#e6eee1;padding:18px 20px;border-radius:8px;overflow:auto;line-height:1.6;font-size:12px;border:1px solid #334a38}pre code{background:none;padding:0;color:inherit;overflow-wrap:normal;white-space:pre}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.5}th,td{border-bottom:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}th{background:var(--card);font-weight:700}tr:nth-child(even) td{background:color-mix(in srgb,var(--card) 40%,transparent)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:7px;margin:20px 0}table code{font-size:11px}#searchStatus{font-size:12px;color:var(--muted);min-height:1.5em}[hidden]{display:none!important}footer{color:var(--muted);font-size:12px;margin-top:30px}a:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid #609446;outline-offset:3px}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--paper:#111a14;--ink:#e6ede1;--muted:#a2b59e;--line:#344732;--accent:#bbdf96;--card:#1d2c1e;--code:#263625}button{color:#172211}}
+@media(max-width:850px){.layout{display:block}aside{position:static;height:auto;border:0;border-bottom:1px solid var(--line);padding:15px;display:grid;grid-template-columns:1fr 1fr}aside .caption{grid-column:1/-1}main{padding:24px 18px}header{flex-wrap:wrap;padding:12px 16px;gap:10px}header input{width:100%;max-width:none;order:3}header small{font-size:11px}.intro{font-size:32px}h2{font-size:27px}h3{font-size:19px}}
+@media print{@page{size:A4;margin:16mm}header,aside,.intro,.subtitle,#searchStatus{display:none!important}.layout{display:block}main{max-width:none;padding:0;font-size:10pt;line-height:1.45}.doc-section[hidden]{display:block!important}.doc-section{break-before:page;border:0;padding:0}.doc-section:first-of-type{break-before:auto}h2{font-size:23pt}h3{font-size:14pt;break-after:avoid}table{font-size:8pt}th,td{padding:5px 7px}.table-wrap{overflow:visible}pre{background:#f1f3ed;color:#142016;white-space:pre-wrap;overflow:visible;padding:10px;border:1px solid #bfcdbb}pre code{white-space:pre-wrap;overflow-wrap:anywhere;font-size:8pt}a{color:inherit}body{background:white;color:#142016}p,li{orphans:3;widows:3}}
+</style></head><body><header><strong>ORBIT</strong><small>Документация · 30 октября 2026</small><input id="search" type="search" aria-label="Поиск по документации" placeholder="Поиск по главам · ⌘/Ctrl K"><button id="print">Печать / PDF</button></header><div class="layout"><aside aria-label="Оглавление"><div class="caption">10 подробных глав</div><a href="#c0-h0" class="level-2" data-chapter="0">ORBIT — полная документация</a><a href="#c1-h6" class="level-2" data-chapter="1">Руководство пользователя</a><a href="#c2-h18" class="level-2" data-chapter="2">Инструменты и звук</a><a href="#c3-h27" class="level-2" data-chapter="3">MCP: подключение и практика</a><a href="#c4-h38" class="level-2" data-chapter="4">MCP: полный справочник инструментов</a><a href="#c5-h56" class="level-2" data-chapter="5">Проекты, хранение и экспорт</a><a href="#c6-h62" class="level-2" data-chapter="6">Архитектура, HTTP и хранение</a><a href="#c7-h72" class="level-2" data-chapter="7">Разработка, сборка и публикация</a><a href="#c8-h81" class="level-2" data-chapter="8">Диагностика и ограничения</a><a href="#c9-h89" class="level-2" data-chapter="9">Проверки и история</a></aside><main><h1 class="intro">Вся студия. В деталях.</h1><p class="subtitle">Интерфейс · 36 тембров · 15 MCP-инструментов · код · данные · развёртывание</p><p id="searchStatus" role="status">Все 10 глав. Поиск проверяет все слова запроса внутри главы.</p><section class="doc-section" data-chapter="0"><h2 id="c0-h0">ORBIT — полная документация</h2>
+<p>Редакция от 30 октября 2026 года, Europe/Moscow. Документация описывает фактическую реализацию ORBIT Music Keyboard Studio 2.0.0 с проектами формата version 1. Исходный commit: <strong>6550ce0988f9f51ea24905cb374491a3e7b3405d</strong>.</p>
+<h3 id="c0-h1">Что сохранено</h3>
+<p>Это самостоятельный комплект: руководство пользователя, справочник тембров, звукового движка и эффектов, все MCP-команды с точными схемами, форматы данных, архитектура, сборка, публикация, диагностика и примеры. Данные каталогов и схем извлечены из текущего кода. Факты о проверках отделены от рекомендаций для будущих изменений.</p>
+<p>Удобнее всего открыть <strong>ORBIT-Documentation.html</strong>: все главы находятся в одном файле, есть поиск и печать. Markdown-файлы пригодны для редактирования. <code>reference/</code> содержит машиночитаемые схемы, параметры и образцы. <code>examples/</code> — готовые запросы и локальный сервер для разработки. <code>source/orbit-mcp-source.zip</code> — архив исходников этой редакции.</p>
+<h3 id="c0-h2">Быстрый старт музыканта</h3>
+<ol>
+<li>Откройте <a href="https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/">веб-студию</a>.</li>
+<li>Нажмите <strong>Start Audio</strong>. Без запуска браузерного аудиоконтекста удалённая команда не включает звук.</li>
+<li>Выберите инструмент, нажмите клавиши или пэды. <strong>Play</strong> запускает секвенсор.</li>
+<li>Для полного сохранения нажмите <strong>Сохранить</strong>: JSON включает настройки, ноты и загруженные аудиосэмплы.</li>
+<li>Для готового звука используйте <strong>Экспорт → WAV</strong>, для нот — <strong>MIDI</strong>.</li>
+</ol>
+<p>Автономный <code>music-keyboard-studio.html</code> работает без сети. Удалённый MCP управляет подключённой веб-студией; отдельная вкладка <code>file://</code> не является её сессией.</p>
+<h3 id="c0-h3">Быстрый старт управления из чата</h3>
+<ol>
+<li>Подключите личный плагин <strong>ORBIT — Music Keyboard Studio</strong> в поддерживаемом клиенте. В этой беседе команды уже были доступны и проверены.</li>
+<li>В веб-студии дождитесь <strong>MCP ● подключён</strong>.</li>
+<li>Нажмите <strong>Start Audio</strong>, затем напишите: «Выбери арфу и сыграй C–E–G».</li>
+<li>Если открыто несколько веб-студий, сначала вызовите <code>orbit_list_sessions</code> и выберите <code>session_id</code>.</li>
+</ol>
+<p>MCP endpoint: <code>https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/mcp</code>. Этот же URL используется как OAuth resource. Один адрес сам по себе не заменяет авторизацию клиента.</p>
+<h3 id="c0-h4">Навигация по комплекту</h3>
+<div class="table-wrap"><table><thead><tr><th>Файл</th><th>Содержание</th></tr></thead><tbody>
+<tr><td>01-Руководство-пользователя.md</td><td>Все панели, клавиатура, пэды, запись, секвенсор и Playground</td></tr>
+<tr><td>02-Инструменты-и-звук.md</td><td>36 тембров, ID, синтез, ADSR, эффекты и музыкальные единицы</td></tr>
+<tr><td>03-MCP-практика.md</td><td>Подключение, последовательности команд, ожидание результата и примеры</td></tr>
+<tr><td>04-MCP-справочник.md</td><td>15 инструментов, все поля, диапазоны, значения и побочные эффекты</td></tr>
+<tr><td>05-Проекты-и-экспорт.md</td><td>JSON, автосохранение, сэмплы, MIDI, WAV и восстановление</td></tr>
+<tr><td>06-Архитектура-и-HTTP.md</td><td>Компоненты, аудиомаршруты, API, D1, очередь, идентификация</td></tr>
+<tr><td>07-Разработка-и-публикация.md</td><td>Структура исходников, сборка, проверки, локальный запуск и Sites</td></tr>
+<tr><td>08-Диагностика-и-ограничения.md</td><td>Ошибки, известные пределы и рецепты устранения проблем</td></tr>
+<tr><td>09-Проверки-и-история.md</td><td>Проверенная версия, воспроизводимые тесты и история изменений</td></tr>
+<tr><td>reference/mcp-tools.json</td><td>Полные фактические inputSchema и annotations всех MCP-инструментов</td></tr>
+<tr><td>reference/instruments.json</td><td>Полные параметры 36 пресетов, категории и MIDI program</td></tr>
+<tr><td>reference/default-project.json</td><td>Реальный стартовый проект формата version 1</td></tr>
+<tr><td>reference/project.schema.json</td><td>Описательная схема JSON-проекта; не заменяет валидатор приложения</td></tr>
+<tr><td>examples/mcp-requests.json</td><td>Примеры аргументов MCP и последовательность «арфа + C–E–G»</td></tr>
+<tr><td>examples/local-preview.mjs</td><td>Локальный Worker-адаптер с тестовой D1 и фиктивной локальной личностью</td></tr>
+<tr><td>source/orbit-mcp-source.zip</td><td>Исходники версии, к которой относится документация</td></tr>
+<tr><td>manifest.json</td><td>Контрольные суммы файлов комплекта</td></tr>
+</tbody></table></div>
+<h3 id="c0-h5">Граница документации</h3>
+<p>ORBIT — браузерная студия с одним выбранным мелодическим тембром, четырьмя микшерными каналами и синтезированными барабанами. Она не реализует полноценную многодорожечную DAW, VST-хост, серверный рендер или постоянный облачный архив проектов. Доступные функции и ограничения ниже относятся именно к сохранённой версии.</p></section><section class="doc-section" data-chapter="1"><h2 id="c1-h6">Руководство пользователя</h2>
+<h3 id="c1-h7">Открытие, звук и сохранение</h3>
+<p>Веб-версия загружает студию с Sites и может подключаться к MCP. Автономная версия — один HTML со встроенным Tone.js; после скачивания интернет для игры не нужен. Проекты между этими версиями переносятся через JSON. Их браузерные хранилища могут быть разными.</p>
+<p>Первый запуск звука требует нажатия <strong>Start Audio</strong>. Игра мышью или физической клавиатурой также может вызвать локальное включение аудио, но для предсказуемого управления через чат сначала нажмите отдельную кнопку. После перезагрузки аудиоконтекст создаётся заново. Если звука нет, проверьте кнопку Audio ON, системный выход, Mute и громкости.</p>
+<p><strong>Сохранить</strong> скачивает <code>orbit-session.json</code>. <strong>Открыть</strong> загружает JSON с диска и заменяет проект в текущей вкладке. Автосохранение действует с задержкой около 450 мс после изменений, содержит метаданные проекта и названия сэмплов, но не их аудиоданные. Значок «Сохранено на устройстве» не означает, что аудиосэмплы надёжно сохранены. Для них нужен полный JSON.</p>
+<h3 id="c1-h8">Верхняя панель и транспорт</h3>
+<div class="table-wrap"><table><thead><tr><th>Элемент</th><th>Поведение</th></tr></thead><tbody>
+<tr><td>Play / Pause</td><td>Запуск или пауза Tone.Transport; при паузе звучащие голоса отпускаются</td></tr>
+<tr><td>Stop</td><td>Остановка, завершение записи, сброс позиции и арпеджиатора, снятие нот</td></tr>
+<tr><td>Record</td><td>Начало или завершение записи исполнения в Piano Roll; старт записи запускает транспорт</td></tr>
+<tr><td>BPM</td><td>Темп 40–240 четвертей в минуту; исходное значение 118</td></tr>
+<tr><td>Позиция</td><td>Такт : доля : шестнадцатая; размер фиксирован 4/4</td></tr>
+<tr><td>Loop</td><td>Повтор текущих 16 или 32 шагов</td></tr>
+<tr><td>Click</td><td>Метроном по четвертям; первая доля такта звучит выше</td></tr>
+<tr><td>Start Audio</td><td>Разрешение и запуск локального аудиодвижка</td></tr>
+<tr><td>Экспорт</td><td>WAV одного цикла с хвостом или MIDI с нотами и ударными</td></tr>
+</tbody></table></div>
+<p>Пауза и Stop отличаются: пауза сохраняет позицию транспорта, Stop возвращает его к началу. Пробел использует переключение Play/Stop; это не то же самое, что кнопка Pause.</p>
+<h3 id="c1-h9">Микшер и тональность</h3>
+<p>На широком экране микшер находится слева; на узком открывается кнопкой в заголовке. Четыре канала: <strong>Инструмент</strong> — живые клавиши, пэды с нотами и отдельный голос MCP; <strong>Drum rack</strong> — синтезированные барабаны и сэмплы; <strong>Мелодия</strong> — секвенсор и записанные мелодические события; <strong>Master</strong> — общий уровень. Громкости 0–100, кнопка M отключает канал. Сэмплы используют канал Drum rack, отдельного фейдера каждому пэду нет.</p>
+<p>Выберите тонику C…B и гамму: Minor, Major, Dorian, Pentatonic или Chromatic. Pentatonic в коде — минорная пентатоника. <strong>Scale Lock</strong> приводит живые ноты к допустимым ступеням; при одинаковом расстоянии выбирает нижнюю ноту. Ранее записанные события Piano Roll воспроизводят сохранённые MIDI-ноты напрямую, а мелодическая строка секвенсора применяет Scale Lock при проигрывании.</p>
+<p>Блок «Идея для трека» создаёт мелодический и барабанный паттерн в выбранной тональности. Доступны House, Techno, Trance, Ambient, Synthwave и Lo-fi. Это заданные последовательности ступеней и ритмический шаблон, а не вызов генеративной модели. House, Trance и Synthwave используют одинаковую последовательность ступеней в этой версии.</p>
+<h3 id="c1-h10">Выбор тембра и избранное</h3>
+<p>Список сгруппирован по категориям. Номер рядом с названием показывает 1–36, а MCP использует ID 0–35. Например, Concert Harp отображается как 25 / 36, её API ID — 24.</p>
+<p>Звезда добавляет текущий инструмент в раздел «★ Избранное». Избранное хранится отдельно от проекта в предпочтениях браузера. Его можно менять через MCP <code>favorite</code>, но полный JSON проекта не является резервной копией избранного.</p>
+<p>При переключении тембра загружаются его стандартные ADSR, фильтр, громкость и панорама. Настройки общей цепи эффектов сохраняются. Quick Cutoff меняет фильтр инструмента, Space — долю Reverb. Для возврата начальных параметров текущего пресета есть Reset во вкладке «Звук».</p>
+<h3 id="c1-h11">Клавиатура</h3>
+<p>Клавиши поддерживают мышь, касания и несколько одновременных указателей. Можно вести указатель по клавишам, пока он нажат. Z/X переключают начальную октаву 1–6, Zoom показывает 2–4 октавы, Velocity задаёт силу новых нот 0.1–1.</p>
+<div class="table-wrap"><table><thead><tr><th>Физическая клавиша</th><th>Полутон от начала текущей октавы</th></tr></thead><tbody>
+<tr><td>A</td><td>0: C</td></tr>
+<tr><td>W</td><td>1: C#</td></tr>
+<tr><td>S</td><td>2: D</td></tr>
+<tr><td>E</td><td>3: D#</td></tr>
+<tr><td>D</td><td>4: E</td></tr>
+<tr><td>F</td><td>5: F</td></tr>
+<tr><td>T</td><td>6: F#</td></tr>
+<tr><td>G</td><td>7: G</td></tr>
+<tr><td>Y</td><td>8: G#</td></tr>
+<tr><td>H</td><td>9: A</td></tr>
+<tr><td>U</td><td>10: A#</td></tr>
+<tr><td>J</td><td>11: B</td></tr>
+<tr><td>K</td><td>12: C следующей октавы</td></tr>
+<tr><td>O</td><td>13: C# следующей октавы</td></tr>
+<tr><td>L</td><td>14: D следующей октавы</td></tr>
+<tr><td>P</td><td>15: D# следующей октавы</td></tr>
+<tr><td>;</td><td>16: E следующей октавы</td></tr>
+<tr><td>&#x27;</td><td>17: F следующей октавы</td></tr>
+<tr><td>]</td><td>18: F# следующей октавы</td></tr>
+</tbody></table></div>
+<p>Соответствие основано на <code>KeyboardEvent.code</code>, то есть физических позициях клавиш. Когда фокус находится в input/select/textarea или при нажатых Ctrl/Meta/Alt, музыкальные сочетания обычно не обрабатываются. Автоповтор нажатия не создаёт повторных атак.</p>
+<p><strong>Shift</strong> временно включает Sustain. Кнопка Sustain фиксирует удержание; после отпускания Shift возвращается состояние этой кнопки. Pitch bend меняет detune, сбрасывается при отпускании, потере фокуса или Stop. Modulation добавляет вибрато к живому тембру. При уходе со вкладки или потере фокуса сбрасываются удерживаемые ноты и пэды: это защита от зависшего звука.</p>
+<h3 id="c1-h12">Performance Pads</h3>
+<p>16 пэдов доступны в четырёх режимах. Цифры 1–8 запускают первые восемь пэдов; остальные доступны указателем.</p>
+<div class="table-wrap"><table><thead><tr><th>Режим</th><th>Что играет</th></tr></thead><tbody>
+<tr><td>Аккорды</td><td>Трезвучия по ступеням текущей гаммы либо выбранный тип от корня ступени</td></tr>
+<tr><td>Drums</td><td>16 названий/вариантов на базе шести синтезаторов ударных</td></tr>
+<tr><td>Samples</td><td>Локальный аудиофайл выбранного пэда или встроенный синтезированный буфер</td></tr>
+<tr><td>Гамма</td><td>Последовательные ступени текущей гаммы</td></tr>
+</tbody></table></div>
+<p>Типы аккордов: «В тональности» (<code>auto</code>), Major, Minor, Seventh, Sus2, Sus4, Diminished. Seventh здесь строится как [0,4,7,10], то есть доминантсептаккорд. Для режима auto используются ступени i, i+2, i+4 выбранной гаммы.</p>
+<p>Для загрузки сэмпла переключитесь в Samples, нажмите нужный пэд, затем кнопку загрузки. Выбирайте аудиофайл до 8 000 000 байт; WAV/MP3 поддерживаются, если браузер умеет декодировать конкретный файл. One-shot играет весь буфер, Gate — пока пэд удерживается, Loop повторяется до отпускания. Пользовательское аудио включается в JSON при сохранении. Встроенные звуки синтезируются на месте.</p>
+<h3 id="c1-h13">Секвенсор</h3>
+<p>Строки: Мелодия, Kick, Snare, Hi-hat, Clap. 16 шагов — один такт 4/4, 32 — два такта. Каждый шаг — шестнадцатая. Клик включает/выключает ячейку. В мелодической строке Shift+клик или правый клик назначают выбранную в списке ноту и включают шаг.</p>
+<p>Кнопка «Мелодия» случайно заполняет мелодическую строку нотами выбранной гаммы; барабаны сохраняются. «Очистить» очищает секвенсор, но не Piano Roll. Humanize слегка меняет velocity и добавляет до 12 мс задержки в реальном проигрывании секвенсора. Swing задаётся отдельно. Изменение длины паттерна останавливает транспорт.</p>
+<p>Undo/Redo хранит до 40 состояний паттерна, записанных событий и длины. Он не откатывает все настройки студии, громкости или смену инструмента. Сочетания: ⌘/Ctrl+Z и ⌘/Ctrl+Shift+Z.</p>
+<h3 id="c1-h14">Арпеджиатор</h3>
+<p>Arp превращает удерживаемые живые ноты в последовательность. Режимы: Up, Down, Up/Down, Random, Played order. Частоты 1/4, 1/8, 1/16, 1/32; диапазон 1–3 октавы; Gate 0.1–0.95 задаёт долю длительности шага. Арпеджиатор использует транспорт и запускает его при локальной игре, если это необходимо.</p>
+<p>MCP <code>orbit_play_notes</code> использует отдельный remote-голос и играет запрошенный аккорд напрямую. Настройка Arp через MCP не превращает такой однократный аккорд в длительное удержание для арпеджиатора.</p>
+<h3 id="c1-h15">Запись и Piano Roll</h3>
+<p>Нажмите Record, сыграйте, затем Stop или выключите Record. Записываются ноты, ударные и сэмплы; длительность живой ноты учитывает отпускание и Sustain. Пока идёт запись, воспроизведение ранее записанных событий подавляется, а секвенсор может продолжать играть.</p>
+<p>В Piano Roll перетаскивайте ноту по времени и высоте. Правый край меняет длину. Двойной клик по пустому месту добавляет ноту, правый клик по событию удаляет его. Перетаскивание использует сетку в четверть шага; Quantize округляет начало и длину к выбранным 1/16, 1/8 или 1/4. «Очистить запись» удаляет события Piano Roll и не очищает секвенсор.</p>
+<p>Секвенсор и Piano Roll при проигрывании складываются. При совпадающих нотах можно услышать наложение, а не замену одной партии другой.</p>
+<h3 id="c1-h16">Эффекты, XY и визуализация</h3>
+<p>Во вкладке «Эффекты» доступны восемь эффектов с переключателями и двумя параметрами. XY-площадка одновременно меняет Cutoff и/или Mix Reverb/Delay/Distortion; оси выбираются в списках. Она доступна указателем и стрелками. Изменение XY может включать соответствующий эффект. Подробные значения — в справочнике звука.</p>
+<p>Визуализация: Oscilloscope, Spectrum, Neon Particles, Pulsing Geometry. Это отображение локального мастер-сигнала, не отдельный генератор. Она обновляется примерно до 30 кадров/с, прекращает рисование в скрытой вкладке, ограничивает плотность canvas значением 2.</p>
+<h3 id="c1-h17">Playground</h3>
+<p>Learn to Play предлагает последовательность подсвеченных нот. Rhythm Challenge просит 16 попаданий по Kick возле метронома; допустимое отклонение около 160 мс. Chord Challenge — четыре заданных аккорда. Beat Builder последовательно просит Kick, Snare, Hi-hat, бас ниже C4 и мелодию C4 или выше.</p>
+<p>За верное действие начисляется 10 + min(серия,10) очков; ошибка сбрасывает серию. Отображаются точность, очки, серия и достижения. Запуск упражнений может менять октаву, режим пэдов, метроном и транспорт. «Свободная игра» прекращает упражнение, сохраняя возможность играть.</p></section><section class="doc-section" data-chapter="2"><h2 id="c2-h18">Инструменты и звук</h2>
+<h3 id="c2-h19">Общие принципы</h3>
+<p>В студии 36 синтезированных тембров. Они создаются в браузере; названия Grand Piano, Flute или Guitar обозначают характер синтеза, а не использование записей реальных инструментов. Внешние банки сэмплов и платные звуковые библиотеки для этих пресетов не нужны. Выбран один текущий тембр, общий для живой игры, мелодии секвенсора и remote-голоса MCP.</p>
+<p>MIDI-нота 60 = C4, 69 = A4 = 440 Hz. Частота вычисляется как <code>440 * 2 ** ((note - 69) / 12)</code>. Все API ID начинаются с нуля; номер на экране на единицу больше. Нумерация General MIDI в справочниках иногда начинается с 1; сохранённое значение program в ORBIT — байт 0–127.</p>
+<h3 id="c2-h20">Каталог 36 инструментов</h3>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>№ UI</th><th>Название</th><th>Категория</th><th>Синтез</th><th>GM program</th><th>Характер</th></tr></thead><tbody>
+<tr><td>0</td><td>1</td><td>Grand Piano</td><td>Клавишные</td><td>FM</td><td>0</td><td>Мягкое синтезированное фортепиано</td></tr>
+<tr><td>1</td><td>2</td><td>Electric Piano</td><td>Клавишные</td><td>FM</td><td>4</td><td>Колокольный FM-тембр с тёплым хвостом</td></tr>
+<tr><td>2</td><td>3</td><td>Analog Synth</td><td>Синтезаторы</td><td>Synth</td><td>80</td><td>Тёплый полифонический синтезатор</td></tr>
+<tr><td>3</td><td>4</td><td>Synth Bass</td><td>Бас</td><td>Mono</td><td>38</td><td>Плотный фундамент для вашего грува</td></tr>
+<tr><td>4</td><td>5</td><td>Acid Bass</td><td>Бас</td><td>Mono</td><td>38</td><td>Резонансный бас с характером 303</td></tr>
+<tr><td>5</td><td>6</td><td>Pluck Synth</td><td>Синтезаторы</td><td>Synth</td><td>10</td><td>Короткие ноты, большие мелодии</td></tr>
+<tr><td>6</td><td>7</td><td>Ambient Pad</td><td>Пэды и атмосферы</td><td>AM</td><td>89</td><td>Медленно раскрывающаяся атмосфера</td></tr>
+<tr><td>7</td><td>8</td><td>Lead Synth</td><td>Синтезаторы</td><td>Synth</td><td>81</td><td>Яркий голос для главной мелодии</td></tr>
+<tr><td>8</td><td>9</td><td>Drawbar Organ</td><td>Клавишные</td><td>Synth</td><td>16</td><td>Тёплые обертоны электромеханического органа</td></tr>
+<tr><td>9</td><td>10</td><td>Cathedral Organ</td><td>Клавишные</td><td>Synth</td><td>19</td><td>Глубокий орган с открытыми квинтами</td></tr>
+<tr><td>10</td><td>11</td><td>String Ensemble</td><td>Струнные и духовые</td><td>Synth</td><td>48</td><td>Мягкий ансамбль расстроенных струнных голосов</td></tr>
+<tr><td>11</td><td>12</td><td>Brass Section</td><td>Струнные и духовые</td><td>Mono</td><td>61</td><td>Медные духовые с яркой раскрывающейся атакой</td></tr>
+<tr><td>12</td><td>13</td><td>Concert Flute</td><td>Струнные и духовые</td><td>FM</td><td>73</td><td>Мягкий синусовый голос с лёгким вибрато</td></tr>
+<tr><td>13</td><td>14</td><td>Clarinet</td><td>Струнные и духовые</td><td>Synth</td><td>71</td><td>Деревянный тембр с нечётными гармониками</td></tr>
+<tr><td>14</td><td>15</td><td>Crystal Bells</td><td>Колокольчики и перкуссия</td><td>FM</td><td>14</td><td>Хрустальные FM-колокольчики с длинным затуханием</td></tr>
+<tr><td>15</td><td>16</td><td>Marimba</td><td>Колокольчики и перкуссия</td><td>FM</td><td>12</td><td>Короткий деревянный удар и округлый бас</td></tr>
+<tr><td>16</td><td>17</td><td>Vibraphone</td><td>Колокольчики и перкуссия</td><td>FM</td><td>11</td><td>Мягкий металлический звон с деликатным вибрато</td></tr>
+<tr><td>17</td><td>18</td><td>Kalimba</td><td>Колокольчики и перкуссия</td><td>FM</td><td>108</td><td>Звонкие язычки с коротким металлическим призвуком</td></tr>
+<tr><td>18</td><td>19</td><td>Nylon Guitar</td><td>Струнные и духовые</td><td>FM</td><td>24</td><td>Щипковый тембр с тёплой атакой нейлоновой струны</td></tr>
+<tr><td>19</td><td>20</td><td>Funk Clavinet</td><td>Клавишные</td><td>Synth</td><td>7</td><td>Сухой, упругий клавишный щипок для фанка</td></tr>
+<tr><td>20</td><td>21</td><td>Super Saw</td><td>Синтезаторы</td><td>Synth</td><td>81</td><td>Пять широких пилообразных голосов для транса</td></tr>
+<tr><td>21</td><td>22</td><td>8-bit Lead</td><td>Синтезаторы</td><td>Synth</td><td>80</td><td>Чёткая квадратная волна в духе игровых консолей</td></tr>
+<tr><td>22</td><td>23</td><td>Reese Bass</td><td>Бас</td><td>Synth</td><td>38</td><td>Два расстроенных осциллятора и густой низ</td></tr>
+<tr><td>23</td><td>24</td><td>Choir Pad</td><td>Пэды и атмосферы</td><td>Synth</td><td>52</td><td>Синтезированный хоровой гласный с плавным входом</td></tr>
+<tr><td>24</td><td>25</td><td>Concert Harp</td><td>Струнные и духовые</td><td>String</td><td>46</td><td>Модель щипковой струны с мягким резонансом</td></tr>
+<tr><td>25</td><td>26</td><td>Steel String Guitar</td><td>Струнные и духовые</td><td>String</td><td>25</td><td>Яркий щипок стальной струны и открытое затухание</td></tr>
+<tr><td>26</td><td>27</td><td>Muted Electric Guitar</td><td>Струнные и духовые</td><td>String</td><td>28</td><td>Плотный приглушённый щипок для ритмичных партий</td></tr>
+<tr><td>27</td><td>28</td><td>Harpsichord</td><td>Клавишные</td><td>String</td><td>6</td><td>Сухая клавесинная атака и яркие щипковые гармоники</td></tr>
+<tr><td>28</td><td>29</td><td>808 Bass</td><td>Бас</td><td>Membrane</td><td>38</td><td>Синусовый бас с падением высоты; попробуйте октавы 1–2</td></tr>
+<tr><td>29</td><td>30</td><td>Slap Bass</td><td>Бас</td><td>FM</td><td>36</td><td>Резкий FM-щелчок и упругий басовый корпус</td></tr>
+<tr><td>30</td><td>31</td><td>Hoover Synth</td><td>Синтезаторы</td><td>AM</td><td>86</td><td>Расстроенная пила с субоктавной модуляцией для рейва</td></tr>
+<tr><td>31</td><td>32</td><td>Sync Lead</td><td>Синтезаторы</td><td>Mono</td><td>84</td><td>Спектр синхронизированной пилы и подвижный фильтр</td></tr>
+<tr><td>32</td><td>33</td><td>Accordion</td><td>Характерные тембры</td><td>Synth</td><td>21</td><td>Три язычковых голоса с лёгкой расстройкой</td></tr>
+<tr><td>33</td><td>34</td><td>Harmonica</td><td>Характерные тембры</td><td>Synth</td><td>22</td><td>Насыщенные язычковые гармоники и дыхательное вибрато</td></tr>
+<tr><td>34</td><td>35</td><td>Sitar</td><td>Характерные тембры</td><td>String</td><td>104</td><td>Щипковая струна с жужжащими обертонами джавари</td></tr>
+<tr><td>35</td><td>36</td><td>Steel Pan</td><td>Колокольчики и перкуссия</td><td>FM</td><td>114</td><td>Тёплый металлический удар с почти гармоническим звоном</td></tr>
+</tbody></table></div>
+<h3 id="c2-h21">Типы синтеза</h3>
+<div class="table-wrap"><table><thead><tr><th>voice в пресете</th><th>Реализация и характер</th></tr></thead><tbody>
+<tr><td>Synth</td><td>Tone.Synth внутри Tone.PolySynth; обычные, fat и custom-осцилляторы</td></tr>
+<tr><td>FM</td><td>Tone.FMSynth; harmonicity, modulationIndex и отдельная огибающая модуляции</td></tr>
+<tr><td>AM</td><td>Tone.AMSynth; амплитудная модуляция, включая fat saw и квадратный модулятор</td></tr>
+<tr><td>Mono</td><td>Tone.MonoSynth внутри Tone.PolySynth: резонансный фильтр с огибающей; название класса не ограничивает весь инструмент одним голосом</td></tr>
+<tr><td>Membrane</td><td>Tone.MembraneSynth; падение высоты и амплитудная огибающая для 808</td></tr>
+<tr><td>String</td><td>Собственный StringSynth на Web Audio с моделью щипковой струны</td></tr>
+</tbody></table></div>
+<p>Обычные PolySynth и StringSynth ограничены 32 голосами на экземпляр. Живое исполнение, секвенсор и MCP имеют отдельные экземпляры, поэтому удалённый аккорд не забирает удерживаемые клавиатурные голоса.</p>
+<p>StringSynth использует Karplus–Strong: шумовое возбуждение, дробную задержку, затухание и фильтрацию обратной связи. Частота кэшируется с четырьмя знаками после запятой; на экземпляр хранится до 12 буферов. Длина затухания зависит от Decay, Sustain и параметра ringing, ограничивается 0.2–8 с до расчёта буфера. Для ситара и muted guitar добавлена нелинейная окраска buzz. Harpsichord имеет нижний порог velocity 0.7. Полные параметры каждого пресета сохранены в <code>reference/instruments.json</code>.</p>
+<p>Sync Lead использует вычисленный спектр синхронизированной пилы: 32 гармоники из 1024 отсчётов. Это статическое спектральное приближение выбранного отношения частот, а не отдельный непрерывно управляемый hard-sync осциллятор.</p>
+<h3 id="c2-h22">Параметры звука</h3>
+<div class="table-wrap"><table><thead><tr><th>Параметр</th><th>Диапазон</th><th>Единица и смысл</th></tr></thead><tbody>
+<tr><td>attack</td><td>0.001–2</td><td>секунды нарастания</td></tr>
+<tr><td>decay</td><td>0.01–3</td><td>секунды спада после атаки</td></tr>
+<tr><td>sustain</td><td>0–1</td><td>относительный удерживаемый уровень</td></tr>
+<tr><td>release</td><td>0.03–5</td><td>секунды отпускания</td></tr>
+<tr><td>cutoff</td><td>100–16000</td><td>Hz низкочастотного фильтра инструмента</td></tr>
+<tr><td>resonance</td><td>0.1–12</td><td>Q фильтра</td></tr>
+<tr><td>volume</td><td>−30–0</td><td>dB тембра до микшера</td></tr>
+<tr><td>pan</td><td>−1–1</td><td>−1 слева, 0 центр, 1 справа</td></tr>
+</tbody></table></div>
+<p>Быстрый Cutoff использует логарифмическое преобразование <code>100 * 160 ** (percent/100)</code>. Фильтр инструмента и включаемый эффект Filter — разные узлы, оба могут влиять на звук. Вибрато некоторых пресетов задано собственными параметрами; Modulation добавляет глубину живому каналу. Смена пресета сбрасывает только sound в его исходные значения и modulation, но не весь проект.</p>
+<h3 id="c2-h23">Эффекты</h3>
+<p>В MCP и JSON используются поля <code>on</code>, <code>a</code>, <code>b</code>. Значение <code>a</code> не всегда означает одну и ту же величину; таблица ниже задаёт точную трактовку.</p>
+<div class="table-wrap"><table><thead><tr><th>Ключ</th><th>Параметр a</th><th>Диапазон a</th><th>Параметр b</th><th>Диапазон b</th><th>По умолчанию</th></tr></thead><tbody>
+<tr><td>reverb</td><td>Decay, с</td><td>0.3–6</td><td>Mix</td><td>0–0.8</td><td>on, 2.5 / 0.2</td></tr>
+<tr><td>delay</td><td>Feedback</td><td>0.05–0.75</td><td>Mix</td><td>0–0.8</td><td>off, 0.3 / 0.22</td></tr>
+<tr><td>distortion</td><td>Drive</td><td>0–0.95</td><td>Mix</td><td>0–0.8</td><td>off, 0.25 / 0.25</td></tr>
+<tr><td>chorus</td><td>Rate, Hz</td><td>0.1–8</td><td>Mix</td><td>0–1</td><td>off, 1.7 / 0.3</td></tr>
+<tr><td>phaser</td><td>Rate, Hz</td><td>0.1–6</td><td>Mix</td><td>0–1</td><td>off, 0.7 / 0.3</td></tr>
+<tr><td>filter</td><td>Cutoff, Hz</td><td>100–16000</td><td>Resonance Q</td><td>0.1–12</td><td>off, 4500 / 1.3</td></tr>
+<tr><td>tremolo</td><td>Rate, Hz</td><td>0.5–14</td><td>Mix</td><td>0–1</td><td>off, 5 / 0.4</td></tr>
+<tr><td>compressor</td><td>Threshold, dB</td><td>−45–0</td><td>Ratio</td><td>1–12</td><td>on, −22 / 3</td></tr>
+</tbody></table></div>
+<p>Порядок цепи: Reverb → Delay → Distortion → Chorus → Phaser → Filter → Tremolo → Compressor. Для эффектов с wet выключение задаёт wet=0, а Filter и Compressor исключаются из маршрута. Изменения многих параметров сглаживаются примерно за 30 мс. Время Delay фиксировано музыкальным значением <code>8n</code>; <code>a</code> меняет обратную связь, а не время задержки. Reverb имеет preDelay 0.015 с; его готовности ожидает аудиодвижок.</p>
+<p>После общей цепи находятся Master Gain и Limiter с порогом −1 dB. Метроном идёт непосредственно на Master, обходя общую FX-цепь. Анализаторы берут сигнал после лимитера.</p>
+<h3 id="c2-h24">Гаммы и последовательности</h3>
+<div class="table-wrap"><table><thead><tr><th>Гамма</th><th>Полутоны от тоники</th></tr></thead><tbody>
+<tr><td>minor</td><td>0,2,3,5,7,8,10</td></tr>
+<tr><td>major</td><td>0,2,4,5,7,9,11</td></tr>
+<tr><td>dorian</td><td>0,2,3,5,7,9,10</td></tr>
+<tr><td>pentatonic</td><td>0,3,5,7,10</td></tr>
+<tr><td>chromatic</td><td>0…11</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Стиль генератора</th><th>Ступени с нуля</th></tr></thead><tbody>
+<tr><td>House</td><td>0,5,2,6</td></tr>
+<tr><td>Techno</td><td>0,0,3,1</td></tr>
+<tr><td>Trance</td><td>0,5,2,6</td></tr>
+<tr><td>Ambient</td><td>0,3,5,4</td></tr>
+<tr><td>Synthwave</td><td>0,5,2,6</td></tr>
+<tr><td>Lo-fi</td><td>1,4,0,5</td></tr>
+</tbody></table></div>
+<p>Корень каждого аккорда в генераторе меняется каждые четыре шестнадцатых, то есть каждую четверть. В A minor House даёт Am → F → C → G. Для 32 шагов последовательность повторяется. Генератор заполняет мелодию чётными шагами, velocity=0.65, duration=1.65 шага. Барабаны задаются формулами: Kick каждый четвёртый шаг, Snare на шаге 4 по модулю 8, Hat на чётных шагах, Clap на шаге 14 по модулю 16.</p>
+<h3 id="c2-h25">Ударные пэды</h3>
+<div class="table-wrap"><table><thead><tr><th>ID API</th><th>№ пэда</th><th>Название</th></tr></thead><tbody>
+<tr><td>0</td><td>1</td><td>Kick</td></tr>
+<tr><td>1</td><td>2</td><td>Snare</td></tr>
+<tr><td>2</td><td>3</td><td>Closed Hat</td></tr>
+<tr><td>3</td><td>4</td><td>Clap</td></tr>
+<tr><td>4</td><td>5</td><td>Low Tom</td></tr>
+<tr><td>5</td><td>6</td><td>Open Hat</td></tr>
+<tr><td>6</td><td>7</td><td>Perc</td></tr>
+<tr><td>7</td><td>8</td><td>High Tom</td></tr>
+<tr><td>8</td><td>9</td><td>Sub Kick</td></tr>
+<tr><td>9</td><td>10</td><td>Rim Noise</td></tr>
+<tr><td>10</td><td>11</td><td>Bright Hat</td></tr>
+<tr><td>11</td><td>12</td><td>Soft Clap</td></tr>
+<tr><td>12</td><td>13</td><td>Mid Tom</td></tr>
+<tr><td>13</td><td>14</td><td>Air Hat</td></tr>
+<tr><td>14</td><td>15</td><td>Bell</td></tr>
+<tr><td>15</td><td>16</td><td>Tom Fill</td></tr>
+</tbody></table></div>
+<p>Названия 16 пэдов — варианты синтеза, а не 16 загружаемых записей. В коде используются шесть генераторов: Membrane kick, white-noise snare, Metal hat, Membrane tom, pink-noise clap и FM perc. Вторая восьмёрка частично повторяет базовые алгоритмы; отдельные варианты меняют высоту.</p>
+<h3 id="c2-h26">Музыкальные единицы</h3>
+<ul>
+<li>MCP <code>duration_beats</code> — четвертные доли; 4 beats при 120 BPM = 2 секунды.</li>
+<li><code>start_step</code>, <code>duration_steps</code>, <code>pattern.melody.duration</code>, <code>events.start/duration</code> — шестнадцатые шаги; при 120 BPM шаг = 0.125 с.</li>
+<li>1 четверть = 4 шага. Длительность цикла: <code>length * 60 / bpm / 4</code> секунд.</li>
+<li>16 шагов = 1 такт 4/4; 32 шага = 2 такта. Длина не равна числу четвертей.</li>
+<li>Velocity в API — 0…1 с нижними пределами конкретного инструмента; в интерфейсе обычно показывается в процентах.</li>
+<li><code>root</code> — класс высоты 0=C … 9=A … 11=B, а <code>note</code> — абсолютная MIDI-нота.</li>
+</ul></section><section class="doc-section" data-chapter="3"><h2 id="c3-h27">MCP: подключение и практика</h2>
+<h3 id="c3-h28">Что соединяется</h3>
+<p>Чат вызывает инструменты приватного Site MCP. Worker проверяет личность пользователя и выбранную браузерную сессию. Команды изменения записываются в D1. Открытая веб-студия забирает их, применяет через OrbitControl и отправляет подтверждение. Звук создаётся на устройстве с этой вкладкой.</p>
+<p>Веб-студия: <code>https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/</code>. MCP и OAuth resource: <code>https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/mcp</code>. Плагин: <strong>ORBIT — Music Keyboard Studio</strong>.</p>
+<p>При публикации Sites с capability <code>mcp</code> создаётся связанный личный плагин. Его нужно подключить через поддерживаемый интерфейс клиента. Не вставляйте случайный bearer token или заголовок <code>oai-authenticated-user-id</code> в пользовательские инструкции: в production заголовок обеспечивает доверенная инфраструктура Sites. Репозиторий не содержит отдельной реализации OAuth-сервера или stdio-сервера.</p>
+<h3 id="c3-h29">Перед изменением студии</h3>
+<p>Вызовите <code>orbit_list_sessions</code>. Если сессия одна, session_id можно не передавать, но явное значение надёжнее. Если сессий несколько, остальные команды требуют <code>session_id</code>; сервер не выбирает вкладку по её видимости в интерфейсе. <code>audio_ready=true</code> означает, что браузер сообщил о запущенном и running аудиоконтексте в последнем снимке.</p>
+<p><code>orbit_get_state</code> и <code>orbit_get_project</code> читают серверный кэш снимка. Проверяйте <code>snapshot_age_ms</code>: это не синхронный запрос к окну в момент чтения. Небольшая задержка между ручным действием и обновлением состояния нормальна.</p>
+<h3 id="c3-h30">Пример: арфа и C–E–G</h3>
+<p>Сначала получите ID сессии. Затем дождитесь завершения выбора инструмента и только потом играйте аккорд. ID 24 соответствует Concert Harp. В этом примере C4=60, E4=64, G4=67; запрошенные высоты не меняются гаммой.</p>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_configure&quot;,&quot;arguments&quot;:{&quot;session_id&quot;:&quot;SESSION_ID&quot;,&quot;instrument_id&quot;:24}}</code></pre>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_play_notes&quot;,&quot;arguments&quot;:{&quot;session_id&quot;:&quot;SESSION_ID&quot;,&quot;notes&quot;:[60,64,67],&quot;duration_beats&quot;:4,&quot;velocity&quot;:0.8,&quot;respect_scale&quot;:false}}</code></pre>
+<p><code>SESSION_ID</code> — заполнитель, замените его реальным значением. <code>duration_beats</code> управляет временем до отпускания; струна и Reverb могут звучать после него. <code>scheduled=true</code> подтверждает постановку звука в локальное расписание, а не то, что микрофон измерил слышимый результат.</p>
+<h3 id="c3-h31">Пример: тональность, темп, эффекты</h3>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_configure&quot;,&quot;arguments&quot;:{&quot;bpm&quot;:110,&quot;root&quot;:0,&quot;scale&quot;:&quot;major&quot;,&quot;instrument_id&quot;:24,&quot;sound&quot;:{&quot;cutoff&quot;:8500,&quot;pan&quot;:0},&quot;fx&quot;:{&quot;reverb&quot;:{&quot;on&quot;:true,&quot;a&quot;:3,&quot;b&quot;:0.28}}}}</code></pre>
+<p>Это частичное обновление. Неуказанные параметры сохраняются, кроме sound при действительной смене инструмента: сначала применяются стандартные значения нового пресета, затем переданные поля sound. Повторный выбор уже выбранного ID не сбрасывает изменённый sound.</p>
+<h3 id="c3-h32">Пример: собственный паттерн</h3>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_set_pattern&quot;,&quot;arguments&quot;:{&quot;length&quot;:16,&quot;replace&quot;:true,&quot;melody&quot;:[{&quot;step&quot;:0,&quot;note&quot;:60,&quot;duration_steps&quot;:2},{&quot;step&quot;:4,&quot;note&quot;:64,&quot;duration_steps&quot;:2},{&quot;step&quot;:8,&quot;note&quot;:67,&quot;duration_steps&quot;:2},{&quot;step&quot;:12,&quot;note&quot;:64,&quot;duration_steps&quot;:2}],&quot;drums&quot;:[{&quot;drum&quot;:&quot;kick&quot;,&quot;steps&quot;:[0,4,8,12]},{&quot;drum&quot;:&quot;snare&quot;,&quot;steps&quot;:[4,12]},{&quot;drum&quot;:&quot;hat&quot;,&quot;steps&quot;:[0,2,4,6,8,10,12,14]}]}}</code></pre>
+<p><code>replace=true</code> очищает строки секвенсора перед применением. Piano Roll остаётся отдельной партией; при необходимости очистите его через <code>orbit_edit_notes</code> с <code>replace=true</code> и <code>notes:[]</code>. Для запуска вызовите <code>orbit_transport</code> с <code>action:&quot;play&quot;</code> после Start Audio.</p>
+<p>При <code>replace=false</code> мелодические шаги обновляются выборочно. Переданная барабанная строка всё равно полностью заменяет набор активных шагов именно этой строки: это не операция «добавить несколько ударов».</p>
+<h3 id="c3-h33">Пример: Piano Roll и экспорт</h3>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_edit_notes&quot;,&quot;arguments&quot;:{&quot;replace&quot;:true,&quot;notes&quot;:[{&quot;note&quot;:60,&quot;start_step&quot;:0,&quot;duration_steps&quot;:4,&quot;velocity&quot;:0.75},{&quot;note&quot;:64,&quot;start_step&quot;:4,&quot;duration_steps&quot;:4},{&quot;note&quot;:67,&quot;start_step&quot;:8,&quot;duration_steps&quot;:8}]}}</code></pre>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_export&quot;,&quot;arguments&quot;:{&quot;format&quot;:&quot;wav&quot;}}</code></pre>
+<p>Экспорт инициирует скачивание в браузере студии, не создаёт файл автоматически в рабочем каталоге агента. WAV останавливает транспорт и требует готового аудиоконтекста. JSON/MIDI могут экспортироваться без запуска звука. Полный JSON со сэмплами экспортируйте именно через <code>orbit_export format=json</code>, а не копированием <code>orbit_get_project</code>.</p>
+<h3 id="c3-h34">Подтверждение и pending</h3>
+<pre data-language="json"><code>{&quot;command_id&quot;:&quot;COMMAND_ID&quot;,&quot;status&quot;:&quot;pending&quot;,&quot;expires_at&quot;:1234567890000}</code></pre>
+<p>Такой ответ означает, что команда поставлена в очередь, но Worker не дождался её ack за короткое окно ожидания. Не повторяйте тот же play/trigger/export наугад. Сначала вызовите:</p>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;orbit_command_status&quot;,&quot;arguments&quot;:{&quot;command_id&quot;:&quot;COMMAND_ID&quot;}}</code></pre>
+<div class="table-wrap"><table><thead><tr><th>status</th><th>Значение</th><th>Следующее действие</th></tr></thead><tbody>
+<tr><td>pending</td><td>Выполнение/подтверждение ещё не известно</td><td>Проверить статус позже; не дублировать звучание</td></tr>
+<tr><td>done</td><td>Браузер подтвердил успех</td><td>Использовать value; следующая зависимая команда допустима</td></tr>
+<tr><td>error</td><td>Браузер сообщил ошибку</td><td>Прочитать error, устранить причину</td></tr>
+<tr><td>expired</td><td>Время доставки истекло</td><td>Сначала выяснить состояние вкладки; затем при необходимости создать новую команду</td></tr>
+</tbody></table></div>
+<p>При обрыве ack браузер хранит результат последних 128 command_id и при повторной доставке отправляет его без повторного исполнения. Кэш находится в памяти вкладки. Это не безусловная гарантия exactly-once после падения или перезагрузки браузера. Состояние expired означает, что очередь больше не доставляет эту команду; оно не доказывает, что команда никогда не начинала выполняться до потери подтверждения.</p>
+<h3 id="c3-h35">Запись через MCP</h3>
+<p><code>orbit_transport record_start</code> включает запись и транспорт. <code>orbit_play_notes</code> добавляет события в записываемую партию с длительностью в шагах <code>beats*4</code>; <code>record_stop</code> завершает запись. Ударные и sample-пэды также могут создавать события. Сохранение записью не заменяет экспорт проекта.</p>
+<h3 id="c3-h36">Безопасная музыкальная последовательность</h3>
+<p>Сначала проверьте сессию и состояние. Для потенциально заменяющих действий получите <code>orbit_get_project</code> или сделайте полный JSON-экспорт, если нужен откат со сэмплами. Затем выполняйте зависимые изменения последовательно, ожидая ack. Для ровного ритма задайте паттерн и запустите транспорт: интервалы между отдельными сетевыми MCP-вызовами не подходят для точного музыкального тайминга.</p>
+<h3 id="c3-h37">Локальный API в HTML</h3>
+<p>В странице доступен <code>window.OrbitControl</code>. Это прямой JavaScript API в том же браузере, а не удалённый MCP endpoint. Его <code>snapshot()</code> возвращает <code>{project,state}</code>, <code>invoke(name,args)</code> выполняет поддерживаемую браузерную команду с той же валидацией полей.</p>
+<pre data-language="javascript"><code>await window.OrbitControl.invoke(&#x27;orbit_configure&#x27;, {instrument_id:24});
+// Сначала вручную нажмите Start Audio.
+await window.OrbitControl.invoke(&#x27;orbit_play_notes&#x27;, {
+  notes:[60,64,67], duration_beats:4, velocity:0.8
+});
+const snapshot = window.OrbitControl.snapshot();</code></pre>
+<p>Локальный invoke не поддерживает серверные операции списка сессий и статуса команды, не требует session_id, не создаёт D1 command_id и возвращает значение непосредственно. <code>orbit_list_instruments</code> локально возвращает массив каталога, тогда как удалённая версия оборачивает его в объект <code>instruments</code>. <code>OrbitMcpBridge</code> — внутренний модульный объект, не публичный <code>window</code> API.</p></section><section class="doc-section" data-chapter="4"><h2 id="c4-h38">MCP: полный справочник инструментов</h2>
+<p>Определения извлечены из <code>mcp/protocol.js</code> сохранённой версии. Полные исходные JSON Schema и annotations находятся в <code>reference/mcp-tools.json</code>. Ниже — русское описание, точные поля и примеры. «Обязательное» для вложенного поля означает обязательность внутри переданного родительского объекта. У необязательного родительского объекта его поля не требуются до передачи самого объекта. Лишние поля аргументов запрещены; исключение — содержимое project, которое дополнительно валидируется приложением. Числа конечные, integer требует целое число; неизвестные tool names отклоняются.</p>
+<p>Во всех session-командах session_id — строка 1–80 символов; её можно опустить только при ровно одной активной сессии. Примеры без session_id предполагают именно такой случай. Read-only команды читают кэш без очереди; остальные возвращают подтверждённый результат либо command_id со статусом pending.</p>
+<h3 id="c4-h39">orbit_list_instruments — Каталог инструментов</h3>
+<p>Не требует открытой браузерной сессии. Возвращает instruments с нулевыми ID, category/description, id_format и studio_url. Это перечень доступных пресетов, а не список нескольких одновременно загруженных дорожек.</p>
+<p>Annotations: readOnlyHint=true, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<p>Аргументы: пустой объект <code>{}</code>.</p>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{}</code></pre>
+<h3 id="c4-h40">orbit_list_sessions — Подключённые вкладки</h3>
+<p>Возвращает только активные сессии текущего пользователя: session_id, label, audio_ready, updated_at. updated_at — Unix epoch в миллисекундах. Студия должна обновляться примерно в пределах последних 90 секунд.</p>
+<p>Annotations: readOnlyHint=true, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<p>Аргументы: пустой объект <code>{}</code>.</p>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{}</code></pre>
+<h3 id="c4-h41">orbit_get_state — Состояние</h3>
+<p>Читает последний серверный снимок: session_id, snapshot_age_ms и поля state на верхнем уровне ответа. Поля включают instrument_id/name, bpm, root, scale, scale_lock, loop, playing, recording, audio_ready, pattern_length, recorded_events, position, sound, fx, arp, favorites. Это чтение кэша, без постановки команды в очередь.</p>
+<p>Annotations: readOnlyHint=true, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{}</code></pre>
+<h3 id="c4-h42">orbit_get_project — Проект без аудио</h3>
+<p>Возвращает session_id, snapshot_age_ms, project и sample_audio_included=false. project — структура version 1, samples сохраняют имена без data. Для полного скачиваемого проекта используйте export json.</p>
+<p>Annotations: readOnlyHint=true, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{}</code></pre>
+<h3 id="c4-h43">orbit_configure — Настройка студии</h3>
+<p>Все поля необязательны; обновление частичное. При смене instrument_id сначала применяются стандартные sound нового тембра, затем переданные sound-поля. favorite относится к выбранному в этом вызове/текущему инструменту. Смена root/scale/scale_lock/arp снимает живые удержания через panic. Ответ value — новый state. Громкости tracks, chordType, padMode, visualMode и XY-привязки не являются полями этой команды: их меняют UI/проектом.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>instrument_id</code></td><td>integer</td><td>нет</td><td>минимум 0; максимум 35</td></tr>
+<tr><td><code>bpm</code></td><td>number</td><td>нет</td><td>минимум 40; максимум 240</td></tr>
+<tr><td><code>root</code></td><td>integer</td><td>нет</td><td>минимум 0; максимум 11</td></tr>
+<tr><td><code>scale</code></td><td>enum</td><td>нет</td><td><code>&quot;minor&quot;</code> / <code>&quot;major&quot;</code> / <code>&quot;dorian&quot;</code> / <code>&quot;pentatonic&quot;</code> / <code>&quot;chromatic&quot;</code></td></tr>
+<tr><td><code>scale_lock</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>loop</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>metronome</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>humanize</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>octave</code></td><td>integer</td><td>нет</td><td>минимум 1; максимум 6</td></tr>
+<tr><td><code>velocity</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 1</td></tr>
+<tr><td><code>favorite</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>sound</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>sound.attack</code></td><td>number</td><td>нет</td><td>минимум 0.001; максимум 2</td></tr>
+<tr><td><code>sound.decay</code></td><td>number</td><td>нет</td><td>минимум 0.01; максимум 3</td></tr>
+<tr><td><code>sound.sustain</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 1</td></tr>
+<tr><td><code>sound.release</code></td><td>number</td><td>нет</td><td>минимум 0.03; максимум 5</td></tr>
+<tr><td><code>sound.cutoff</code></td><td>number</td><td>нет</td><td>минимум 100; максимум 16000</td></tr>
+<tr><td><code>sound.resonance</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 12</td></tr>
+<tr><td><code>sound.volume</code></td><td>number</td><td>нет</td><td>минимум -30; максимум 0</td></tr>
+<tr><td><code>sound.pan</code></td><td>number</td><td>нет</td><td>минимум -1; максимум 1</td></tr>
+<tr><td><code>fx</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.reverb</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.reverb.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.reverb.a</code></td><td>number</td><td>нет</td><td>минимум 0.3; максимум 6</td></tr>
+<tr><td><code>fx.reverb.b</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 0.8</td></tr>
+<tr><td><code>fx.delay</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.delay.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.delay.a</code></td><td>number</td><td>нет</td><td>минимум 0.05; максимум 0.75</td></tr>
+<tr><td><code>fx.delay.b</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 0.8</td></tr>
+<tr><td><code>fx.distortion</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.distortion.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.distortion.a</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 0.95</td></tr>
+<tr><td><code>fx.distortion.b</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 0.8</td></tr>
+<tr><td><code>fx.chorus</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.chorus.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.chorus.a</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 8</td></tr>
+<tr><td><code>fx.chorus.b</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 1</td></tr>
+<tr><td><code>fx.phaser</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.phaser.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.phaser.a</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 6</td></tr>
+<tr><td><code>fx.phaser.b</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 1</td></tr>
+<tr><td><code>fx.filter</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.filter.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.filter.a</code></td><td>number</td><td>нет</td><td>минимум 100; максимум 16000</td></tr>
+<tr><td><code>fx.filter.b</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 12</td></tr>
+<tr><td><code>fx.tremolo</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.tremolo.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.tremolo.a</code></td><td>number</td><td>нет</td><td>минимум 0.5; максимум 14</td></tr>
+<tr><td><code>fx.tremolo.b</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 1</td></tr>
+<tr><td><code>fx.compressor</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>fx.compressor.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>fx.compressor.a</code></td><td>number</td><td>нет</td><td>минимум -45; максимум 0</td></tr>
+<tr><td><code>fx.compressor.b</code></td><td>number</td><td>нет</td><td>минимум 1; максимум 12</td></tr>
+<tr><td><code>arp</code></td><td>object</td><td>нет</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>arp.on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>arp.mode</code></td><td>enum</td><td>нет</td><td><code>&quot;up&quot;</code> / <code>&quot;down&quot;</code> / <code>&quot;updown&quot;</code> / <code>&quot;random&quot;</code> / <code>&quot;played&quot;</code></td></tr>
+<tr><td><code>arp.rate</code></td><td>enum</td><td>нет</td><td><code>&quot;4n&quot;</code> / <code>&quot;8n&quot;</code> / <code>&quot;16n&quot;</code> / <code>&quot;32n&quot;</code></td></tr>
+<tr><td><code>arp.oct</code></td><td>integer</td><td>нет</td><td>минимум 1; максимум 3</td></tr>
+<tr><td><code>arp.gate</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 0.95</td></tr>
+<tr><td><code>swing</code></td><td>number</td><td>нет</td><td>минимум 0; максимум 0.65</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;instrument_id&quot;: 24,
+  &quot;bpm&quot;: 110,
+  &quot;fx&quot;: {
+    &quot;reverb&quot;: {
+      &quot;on&quot;: true,
+      &quot;a&quot;: 2.5,
+      &quot;b&quot;: 0.25
+    }
+  }
+}</code></pre>
+<h3 id="c4-h44">orbit_transport — Транспорт и запись</h3>
+<p>action обязателен. play и record_start требуют уже запущенного аудио. pause сохраняет позицию, stop возвращает к началу и завершает запись. record_stop вызывает finish, сохраняя текущий транспорт. Ответ — state. Повторный play при уже играющем транспорте не создаёт отдельный экземпляр, но сетевые повторные команды всё равно следует проверять по command_id.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>action</code></td><td>enum</td><td>да</td><td><code>&quot;play&quot;</code> / <code>&quot;pause&quot;</code> / <code>&quot;stop&quot;</code> / <code>&quot;record_start&quot;</code> / <code>&quot;record_stop&quot;</code></td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;action&quot;: &quot;play&quot;
+}</code></pre>
+<h3 id="c4-h45">orbit_play_notes — Короткая нота или аккорд</h3>
+<p>notes обязателен, 1–12 целых MIDI 0–127. Повторы одной высоты удаляются перед исполнением. duration_beats по умолчанию 0.5, velocity — текущая state.velocity. respect_scale по умолчанию false; при true используется MusicTheoryEngine.lock, который сам учитывает state.scaleLock. Поэтому true не заставляет приведение, если Scale Lock выключен. Звук идёт через remote и отпускается автоматически. Если запись включена, добавляет события note. Ответ: notes фактически выбранных высот, duration_beats, scheduled=true.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>notes</code></td><td>array</td><td>да</td><td>элементов от 1; элементов до 12</td></tr>
+<tr><td><code>notes[]</code></td><td>integer</td><td>элемент массива</td><td>минимум 0; максимум 127</td></tr>
+<tr><td><code>duration_beats</code></td><td>number</td><td>нет</td><td>минимум 0.0625; максимум 4</td></tr>
+<tr><td><code>velocity</code></td><td>number</td><td>нет</td><td>минимум 0.05; максимум 1</td></tr>
+<tr><td><code>respect_scale</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;notes&quot;: [
+    60,
+    64,
+    67
+  ],
+  &quot;duration_beats&quot;: 4,
+  &quot;velocity&quot;: 0.8,
+  &quot;respect_scale&quot;: false
+}</code></pre>
+<h3 id="c4-h46">orbit_trigger_pad — Пэд</h3>
+<p>pad обязателен, нумерация 0–15. mode по умолчанию — текущий режим пэдов; явный mode меняет этот режим в UI. duration_beats по умолчанию 0.5, velocity — state.velocity. Для chord/scale выбираются ноты по музыкальной теории, для drum вызывается синтез удара. Sample использует существующий браузерный буфер; пользовательский файл предварительно загрузите в UI, иначе используется встроенный. Для sample фактическая громкость берётся из sampleVolume; velocity этой команды не заменяет sampleVolume. Gate/loop автоматически останавливаются через beats; one-shot играет весь буфер. Ответ содержит pad/mode и notes/drum/sample + scheduled.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>pad</code></td><td>integer</td><td>да</td><td>минимум 0; максимум 15</td></tr>
+<tr><td><code>mode</code></td><td>enum</td><td>нет</td><td><code>&quot;chord&quot;</code> / <code>&quot;drum&quot;</code> / <code>&quot;scale&quot;</code> / <code>&quot;sample&quot;</code></td></tr>
+<tr><td><code>duration_beats</code></td><td>number</td><td>нет</td><td>минимум 0.0625; максимум 4</td></tr>
+<tr><td><code>velocity</code></td><td>number</td><td>нет</td><td>минимум 0.05; максимум 1</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;pad&quot;: 0,
+  &quot;mode&quot;: &quot;chord&quot;,
+  &quot;duration_beats&quot;: 2
+}</code></pre>
+<h3 id="c4-h47">orbit_set_pattern — Секвенсор</h3>
+<p>Все поля необязательны. length по умолчанию — текущая; replace отсутствует/false — patch. При true очищаются все melodic on и drum ячейки, затем применяются переданные данные. В переданном melody-элементе on по умолчанию true, velocity — текущая, duration_steps — 1; неуказанные значения этого элемента не обязательно сохраняются. Каждая переданная drum-строка полностью заменяет набор активных шагов строки. step/steps должны быть меньше фактической length; duplicate-элементы применяются по порядку. Массивы внутри state остаются длиной 32. При смене length транспорт останавливается. Правка undoable; Piano Roll не очищается. Ответ: length и pattern.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>length</code></td><td>enum</td><td>нет</td><td><code>16</code> / <code>32</code></td></tr>
+<tr><td><code>replace</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>melody</code></td><td>array</td><td>нет</td><td>элементов до 32</td></tr>
+<tr><td><code>melody[]</code></td><td>object</td><td>элемент массива</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>melody[].step</code></td><td>integer</td><td>да</td><td>минимум 0; максимум 31</td></tr>
+<tr><td><code>melody[].note</code></td><td>integer</td><td>да</td><td>минимум 0; максимум 127</td></tr>
+<tr><td><code>melody[].on</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>melody[].velocity</code></td><td>number</td><td>нет</td><td>минимум 0.05; максимум 1</td></tr>
+<tr><td><code>melody[].duration_steps</code></td><td>number</td><td>нет</td><td>минимум 0.1; максимум 32</td></tr>
+<tr><td><code>drums</code></td><td>array</td><td>нет</td><td>элементов до 4</td></tr>
+<tr><td><code>drums[]</code></td><td>object</td><td>элемент массива</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>drums[].drum</code></td><td>enum</td><td>да</td><td><code>&quot;kick&quot;</code> / <code>&quot;snare&quot;</code> / <code>&quot;hat&quot;</code> / <code>&quot;clap&quot;</code></td></tr>
+<tr><td><code>drums[].steps</code></td><td>array</td><td>да</td><td>элементов до 32</td></tr>
+<tr><td><code>drums[].steps[]</code></td><td>integer</td><td>элемент массива</td><td>минимум 0; максимум 31</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;length&quot;: 16,
+  &quot;replace&quot;: true,
+  &quot;melody&quot;: [
+    {
+      &quot;step&quot;: 0,
+      &quot;note&quot;: 60,
+      &quot;duration_steps&quot;: 4
+    }
+  ],
+  &quot;drums&quot;: [
+    {
+      &quot;drum&quot;: &quot;kick&quot;,
+      &quot;steps&quot;: [
+        0,
+        4,
+        8,
+        12
+      ]
+    }
+  ]
+}</code></pre>
+<h3 id="c4-h48">orbit_edit_notes — Piano Roll</h3>
+<p>notes обязателен, массив до 512 новых событий за один вызов. replace по умолчанию false добавляет, true очищает записанные события перед добавлением. notes=[] с replace=true очищает Piano Roll. Нота должна целиком помещаться: start_step+duration_steps&lt;=length. Общий лимит events — 4096. Velocity по умолчанию текущая. Через эту команду создаются только kind=note, не drum/sample; правка undoable. Ответ: recorded_events.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>replace</code></td><td>boolean</td><td>нет</td><td>—</td></tr>
+<tr><td><code>notes</code></td><td>array</td><td>да</td><td>элементов до 512</td></tr>
+<tr><td><code>notes[]</code></td><td>object</td><td>элемент массива</td><td>лишние поля запрещены</td></tr>
+<tr><td><code>notes[].note</code></td><td>integer</td><td>да</td><td>минимум 0; максимум 127</td></tr>
+<tr><td><code>notes[].start_step</code></td><td>number</td><td>да</td><td>минимум 0; максимум 31.99</td></tr>
+<tr><td><code>notes[].duration_steps</code></td><td>number</td><td>да</td><td>минимум 0.1; максимум 32</td></tr>
+<tr><td><code>notes[].velocity</code></td><td>number</td><td>нет</td><td>минимум 0.05; максимум 1</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;replace&quot;: true,
+  &quot;notes&quot;: [
+    {
+      &quot;note&quot;: 60,
+      &quot;start_step&quot;: 0,
+      &quot;duration_steps&quot;: 4,
+      &quot;velocity&quot;: 0.75
+    }
+  ]
+}</code></pre>
+<h3 id="c4-h49">orbit_generate_progression — Генератор гармонии</h3>
+<p>genre обязателен. Заменяет мелодическую и барабанные строки текущего секвенсора, использует текущие root/scale/chordType и length. Не переключает тембр и не очищает записанную партию. Undoable. Возвращает genre и pattern. Генератор — локальные формулы, без внешнего AI.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>genre</code></td><td>enum</td><td>да</td><td><code>&quot;House&quot;</code> / <code>&quot;Techno&quot;</code> / <code>&quot;Trance&quot;</code> / <code>&quot;Ambient&quot;</code> / <code>&quot;Synthwave&quot;</code> / <code>&quot;Lo-fi&quot;</code></td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;genre&quot;: &quot;House&quot;
+}</code></pre>
+<h3 id="c4-h50">orbit_history — Undo/Redo</h3>
+<p>action обязателен. Откатывает pattern/events/length. При пустой истории возвращает ошибку вместо фиктивного успеха. Не восстанавливает всю конфигурацию студии; load_project очищает историю. Возвращает state.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>action</code></td><td>enum</td><td>да</td><td><code>&quot;undo&quot;</code> / <code>&quot;redo&quot;</code></td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;action&quot;: &quot;undo&quot;
+}</code></pre>
+<h3 id="c4-h51">orbit_export — Скачивание</h3>
+<p>format обязателен: json, midi, wav. JSON включает sample.data. MIDI не включает аудиосэмплы/FX. WAV требует Start Audio, останавливает transport и рендерит один цикл с рассчитанным хвостом. Возвращает file_name и download_started=true; JSON также includes_sample_audio=true. Это не путь к файлу в окружении агента. Пока WAV рендерится, большинство браузерных операций получают BUSY.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=false, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>format</code></td><td>enum</td><td>да</td><td><code>&quot;json&quot;</code> / <code>&quot;midi&quot;</code> / <code>&quot;wav&quot;</code></td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;format&quot;: &quot;json&quot;
+}</code></pre>
+<h3 id="c4-h52">orbit_load_project — Заменить проект</h3>
+<p>project обязателен и должен быть полным version 1 проектом. Схема инструмента допускает произвольные свойства project, затем ProjectStorage.validate и дополнительные browser-проверки проверяют содержимое. См. default-project.json. Останавливает транспорт, заменяет state и очищает Undo. При совпадающих имени и слоте metadata-сэмпла сохраняет уже находящиеся в памяти data. Ответ: loaded=true, instrument_id, missing_sample_audio. Аргументы с base64 учитываются в 512 KiB общего запроса и записываются в D1 queue. Для крупных проектов используйте файловый интерфейс.</p>
+<p>Annotations: readOnlyHint=false, destructiveHint=true, idempotentHint=false, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>session_id</code></td><td>string</td><td>нет</td><td>длина от 1; длина до 80</td></tr>
+<tr><td><code>project</code></td><td>object</td><td>да</td><td>—</td></tr>
+</tbody></table></div>
+<p>Пример с загрузкой полного проекта из файла в JavaScript-клиенте:</p>
+<pre data-language="javascript"><code>const project = JSON.parse(await readFile(&#x27;reference/default-project.json&#x27;,&#x27;utf8&#x27;));
+const args = {session_id: &#x27;SESSION_ID&#x27;, project};
+// Передайте args как params.arguments tools/call.</code></pre>
+<h3 id="c4-h53">orbit_command_status — Проверка результата</h3>
+<p>command_id обязателен; относится к ранее полученному ID этого пользователя. Возвращает pending/done/error/expired и, когда есть, ok/value/error. Не нуждается в активной сессии: полезен при потере связи после отправки. Не повторяйте неизвестный результат звуковой команды без проверки.</p>
+<p>Annotations: readOnlyHint=true, destructiveHint=false, idempotentHint=true, openWorldHint=false.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Тип</th><th>Обязательное</th><th>Значения / ограничения</th></tr></thead><tbody>
+<tr><td><code>command_id</code></td><td>string</td><td>да</td><td>длина от 1; длина до 120</td></tr>
+</tbody></table></div>
+<p>Пример аргументов:</p>
+<pre data-language="json"><code>{
+  &quot;command_id&quot;: &quot;COMMAND_ID&quot;
+}</code></pre>
+<h3 id="c4-h54">Что означают annotations</h3>
+<p>ReadOnlyHint описывает отсутствие изменения музыкального состояния. DestructiveHint=true у load_project указывает на замену всей сессии. IdempotentHint — подсказка клиенту, а не гарантия доставки exactly-once: configure и set_pattern помечены идемпотентными, но создают историю/зависят от текущего состояния и могут повторно обновлять UI. Для pending всё равно проверяйте command_status. OpenWorldHint=false означает, что заявленные операции действуют внутри студии; экспорт инициирует локальную браузерную загрузку.</p>
+<h3 id="c4-h55">Общее представление успешного изменения</h3>
+<pre data-language="json"><code>{&quot;command_id&quot;:&quot;COMMAND_ID&quot;,&quot;session_id&quot;:&quot;SESSION_ID&quot;,&quot;status&quot;:&quot;done&quot;,&quot;ok&quot;:true,&quot;value&quot;:{&quot;scheduled&quot;:true}}</code></pre>
+<p>У конкретного value форма зависит от инструмента. Для error используются status=error, ok=false и error; при expired отдельного ok может не быть. Сервер помечает такие tool results isError=true. Для get_state/get_project/list/status результат не оборачивается в новый queued command.</p></section><section class="doc-section" data-chapter="5"><h2 id="c5-h56">Проекты, хранение и экспорт</h2>
+<h3 id="c5-h57">Где находятся данные</h3>
+<div class="table-wrap"><table><thead><tr><th>Место</th><th>Содержимое</th><th>Что учитывать</th></tr></thead><tbody>
+<tr><td>Память вкладки</td><td>Текущий state, декодированные сэмплы, синтезаторы, Undo/Redo, кэш ack</td><td>Теряется при закрытии или перезагрузке</td></tr>
+<tr><td>localStorage <code>orbit-studio-v1</code></td><td>Снимок проекта без sample.data</td><td>Локален для браузера/источника; это не полный аудиоархив</td></tr>
+<tr><td>localStorage <code>orbit-favorites-v1</code></td><td>Массив избранных instrument ID</td><td>Отдельная настройка, отсутствует в обычном JSON-проекте</td></tr>
+<tr><td>JSON скачанный через Save/export</td><td>Полный state, в том числе встроенные sample.data</td><td>Основной переносимый формат сохранения</td></tr>
+<tr><td>D1 snapshot</td><td>Последний присланный project без аудио и краткий state</td><td>Кэш для MCP, не резервная копия проекта</td></tr>
+<tr><td>D1 commands</td><td>Аргументы и результаты удалённых команд</td><td>Загруженный через MCP project может содержать переданное пользователем аудио</td></tr>
+</tbody></table></div>
+<p>Обычно аудиобайты остаются в браузере: периодические снимки и <code>orbit_get_project</code> их исключают. Если вручную передать <code>project.samples[].data</code> в <code>orbit_load_project</code>, эти байты входят в аргументы команды и сохраняются в серверной очереди до её очистки. Поэтому утверждение «MCP никогда не передаёт аудио» было бы неверным.</p>
+<h3 id="c5-h58">Формат JSON version 1</h3>
+<p>Полный корректный стартовый файл находится в <code>reference/default-project.json</code>; его можно открыть в студии. <code>reference/project.schema.json</code> описывает форму данных для разработки, но фактические проверки и нормализация реализованы в <code>ProjectStorage.validate</code> и дополнительных проверках MCP.</p>
+<div class="table-wrap"><table><thead><tr><th>Поле</th><th>Содержание</th></tr></thead><tbody>
+<tr><td>version</td><td>Ровно 1</td></tr>
+<tr><td>name</td><td>Название проекта; стартовое «Новая сессия»</td></tr>
+<tr><td>bpm</td><td>Темп; валидатор ограничивает 40–240</td></tr>
+<tr><td>instrument</td><td>ID выбранного тембра 0–35</td></tr>
+<tr><td>root, scale, scaleLock</td><td>Тоника 0–11, ключ гаммы, режим приведения живых нот</td></tr>
+<tr><td>octave, octaves</td><td>Начальная октава 1–6, видимые октавы 2–4</td></tr>
+<tr><td>velocity, sustain</td><td>Сила новых нот и удержание; snapshot всегда сохраняет sustain=false</td></tr>
+<tr><td>loop, metronome</td><td>Повтор и метроном</td></tr>
+<tr><td>padMode, chordType</td><td>Режим пэдов и тип аккордов</td></tr>
+<tr><td>length</td><td>16 или 32 активных шага</td></tr>
+<tr><td>pattern.melody</td><td>Внутренний массив из 32 объектов on/note/velocity/duration</td></tr>
+<tr><td>pattern.drums</td><td>Четыре массива до 32 ячеек: Kick, Snare, Hat, Clap</td></tr>
+<tr><td>events</td><td>События записанной партии, максимум 4096</td></tr>
+<tr><td>sound</td><td>ADSR, cutoff, resonance, volume, pan</td></tr>
+<tr><td>fx</td><td>Восемь объектов эффектов on/a/b</td></tr>
+<tr><td>arp</td><td>on/mode/rate/oct/gate</td></tr>
+<tr><td>swing, humanize</td><td>Ритмические настройки</td></tr>
+<tr><td>tracks</td><td>Четыре объекта vol/mute в порядке UI: инструмент, барабаны, мелодия, мастер</td></tr>
+<tr><td>samples</td><td>Массив слотов сэмплов; пустые слоты null, заполненные name и необязательный data</td></tr>
+<tr><td>samplePlayback, sampleVolume</td><td>one/gate/loop и громкость сэмплов</td></tr>
+<tr><td>visualMode</td><td>wave/spectrum/particles/geometry</td></tr>
+<tr><td>xyX, xyY</td><td>Привязки осей XY</td></tr>
+<tr><td>gameStats</td><td>Накопленные очки, лучшая серия и badges</td></tr>
+</tbody></table></div>
+<p>Пример одного шага и одного записанного события:</p>
+<pre data-language="json"><code>{&quot;on&quot;:true,&quot;note&quot;:60,&quot;velocity&quot;:0.75,&quot;duration&quot;:1.5}</code></pre>
+<pre data-language="json"><code>{&quot;kind&quot;:&quot;note&quot;,&quot;note&quot;:60,&quot;start&quot;:0,&quot;duration&quot;:4,&quot;velocity&quot;:0.75}</code></pre>
+<p>У события <code>kind</code> может быть <code>note</code>, <code>drum</code>, <code>sample</code>; отсутствие kind в старых мелодических событиях трактуется как нота. Для drum/sample поле note обозначает индекс пэда, а не высоту MIDI. <code>start</code> и <code>duration</code> измеряются в шестнадцатых шагах. Не создавайте барабанные события с произвольными MIDI-номерами, ориентируясь на мелодический пример.</p>
+<p>Сэмпл:</p>
+<pre data-language="json"><code>{&quot;name&quot;:&quot;my-hit.wav&quot;,&quot;data&quot;:&quot;data:audio/wav;base64,BASE64_AUDIO&quot;}</code></pre>
+<p>Это пример формы поля, не готовое аудио. В metadata snapshot остаётся только <code>{&quot;name&quot;:&quot;my-hit.wav&quot;}</code>. При восстановлении такого проекта после перезагрузки исходного файла уже нет: движок создаёт встроенный fallback, а название само по себе не возвращает пользовательский звук.</p>
+<h3 id="c5-h59">Загрузка и нормализация</h3>
+<p>Открытие через файловый интерфейс допускает JSON-файл до 100 000 000 байт. Валидатор проверяет обязательные структуры, версию, количество дорожек, гамму, длину, ID тембра и числа. Короткие массивы паттерна дополняются до 32. Часть значений ограничивается диапазонами; импорт не обязан буквально сохранять некорректные числа. Поля FX дополняются стандартными значениями.</p>
+<p>MCP дополнительно проверяет sound/fx/arp по схемам инструментов, ограничивает samples до 16, приводит имя к строке длиной до 120, нормализует несколько логических/числовых полей и допускает аудиоданные только с префиксом <code>data:audio/</code>. Если metadata-сэмпл имеет то же имя в том же слоте, что и текущий сэмпл с data, MCP-загрузка сохраняет его существующие байты. Иначе <code>missing_sample_audio</code> перечисляет названия без аудио.</p>
+<p><code>orbit_load_project</code> заменяет state, останавливает транспорт и очищает историю. Его не следует считать полностью атомарной транзакцией: ошибка декодирования или перестройки после присвоения состояния может потребовать ручного восстановления из сохранённого JSON. Файловый импорт и MCP-импорт имеют общую базовую проверку, но дополнительные MCP-ограничения не полностью дублируются файловым импортом.</p>
+<h3 id="c5-h60">JSON, MIDI и WAV</h3>
+<div class="table-wrap"><table><thead><tr><th>Формат</th><th>Сохраняет</th><th>Не сохраняет как воспроизводимое состояние</th></tr></thead><tbody>
+<tr><td>JSON</td><td>Проект, параметры, паттерн, события, встроенные сэмплы, статистику</td><td>Отдельное избранное, Undo/Redo, незавершённые удержания, сам аудиоконтекст</td></tr>
+<tr><td>MIDI</td><td>Ноты секвенсора и записанной партии, ударные, tempo, 4/4, program change</td><td>Аудиосэмплы, FX, реальные браузерные тембры, настройки микшера</td></tr>
+<tr><td>WAV</td><td>Итоговый звук одного цикла и рассчитанного хвоста, с тембром, FX, уровнями и загруженными сэмплами</td><td>Редактируемые ноты, состояние проекта, последующую живую игру</td></tr>
+</tbody></table></div>
+<p>MIDI — Standard MIDI File с одним треком, PPQ=480, мелодический канал 0 и барабанный канал 9 (в пользовательской нумерации — 1 и 10). Tempo переводится из BPM в микросекунды на четверть; размер записан 4/4. Ударные преобразуются в General MIDI [36,38,42,39,45,46,76,50] по индексу modulo 8. Инструмент передаёт program из таблицы пресетов. В другой DAW он звучит её собственным GM-тембром. Sample-события в MIDI пропускаются.</p>
+<p>WAV рендерится Tone.Offline, стерео, 44100 Hz, PCM 16 bit. Длина музыки: <code>length*60/bpm/4</code>, дополнительный хвост: <code>max(sound.release, включённый reverb.decay) + 0.5</code> секунды. Рендер останавливает текущий транспорт. При длинном feedback delay вычисленного хвоста может не хватить для полного затухания: это фиксированная формула, не анализ оставшегося сигнала.</p>
+<p>WAV собирается из сохранённых событий и шагов, а не записывается с системного выхода. Текущий live-арпеджиатор, не записанные удержания, метроном, Tone.Transport Swing и случайный realtime Humanize не превращаются автоматически в эквивалентную экспортированную партию. Для предсказуемого переноса сохраняйте нужные ноты в паттерне/Piano Roll и сравнивайте результат рендера. MIDI также не запекает FX, swing и humanize.</p>
+<p>Экспорт возвращает факт запуска скачивания. Он не может подтвердить, в какую папку браузер сохранил файл или разрешил ли пользователь последующий системный диалог. Исходные имена: <code>orbit-session.json</code>, <code>orbit-session.mid</code>, <code>orbit-session.wav</code>.</p>
+<h3 id="c5-h61">Практика резервного сохранения</h3>
+<p>Перед закрытием проекта с пользовательскими сэмплами сохраните JSON и убедитесь, что файл появился в загрузках. Для проверки переноса откройте его в отдельной чистой вкладке и прослушайте нужные пэды. Для обмена редактируемым проектом отправляйте JSON, для прослушивания — WAV, для переноса нот в DAW — MIDI. Очистка браузерных данных удаляет localStorage, но не уже скачанные файлы.</p></section><section class="doc-section" data-chapter="6"><h2 id="c6-h62">Архитектура, HTTP и хранение</h2>
+<h3 id="c6-h63">Компоненты</h3>
+<pre data-language="text"><code>Чат / MCP-клиент
+   │ tools/call через доверенную авторизацию Sites
+   ▼
+Worker /mcp ─── чтение catalog/state/project/status
+   │ изменение
+   ▼
+D1 orbit_mcp_commands ◄── poll / ack ── Открытая веб-студия
+                                        │ OrbitControl.invoke
+                                        ▼
+                                   Tone.js / Web Audio
+                                        │
+                                        ▼
+                                   Выход устройства</code></pre>
+<p>Приложение собрано без framework runtime. <code>web/index.html</code> содержит UI, музыкальное состояние и движок; <code>mcp/protocol.js</code> — определения и валидацию инструментов; <code>mcp/browser.js</code> — исполнитель и мост; <code>worker/server.js</code> — HTTP, идентификацию, очередь и JSON-RPC. При сборке эти части объединяются с каталогом. Tone.js 14.8.49 включён локальным файлом, в автономном HTML — встроенным скриптом.</p>
+<h3 id="c6-h64">Аудиомаршруты</h3>
+<pre data-language="text"><code>live + remote → instrument Filter → Vibrato → Pan → канал Инструмент ┐
+seq → отдельные Filter → Vibrato → Pan → канал Мелодия               ├→ FX → Master → Limiter → выход
+drums + sample Players → канал Drum rack                            ┘
+метроном ───────────────────────────────────────────────────────────→ Master
+Limiter → Waveform / FFT / Meter → Canvas</code></pre>
+<p>Массив внутренних аудиоканалов и порядок фейдеров UI различаются: applyTracks использует отображение [0,2,1]. Мелодические события секвенсора и Piano Roll идут в seq, удалённые короткие ноты — в remote, а физические клавиши — в live. Результирующий звук всё равно использует один выбранный пресет.</p>
+<h3 id="c6-h65">Состояние и владельцы нот</h3>
+<p><code>AudioEngine.sources</code> связывает источник pointer/key/pad с нотой, <code>owners</code> хранит набор удерживающих источников на высоту. Отпускание одного источника не выключает ноту, которую продолжает удерживать другой. <code>deferred</code> хранит отпускания под Sustain. <code>panic()</code> снимает голоса, очищает активные источники и sample Players, сбрасывает pitch. StringSynth поддерживает собственные voice envelopes, cache и dispose.</p>
+<p>Sequencer использует Tone.Transport с repeat на шестнадцатых, арпеджиатор — проверку сетки на тридцать вторых. UI-подсветка планируется Tone.Draw, а не управляет звуком через задержки DOM. RecordingManager хранит временные pending-ноты, затем превращает их в события. History хранит JSON снимков pattern/events/length.</p>
+<h3 id="c6-h66">HTTP маршруты</h3>
+<div class="table-wrap"><table><thead><tr><th>Метод и путь</th><th>Назначение</th></tr></thead><tbody>
+<tr><td>GET/HEAD <code>/</code>, <code>/index.html</code></td><td>Страница со вставленным MCP-мостом</td></tr>
+<tr><td>GET/HEAD <code>/tone.js</code></td><td>Локальная библиотека Tone</td></tr>
+<tr><td>GET/HEAD <code>/Tone.js.LICENSE.txt</code></td><td>Лицензия библиотеки</td></tr>
+<tr><td>GET/HEAD <code>/download/music-keyboard-studio.html</code></td><td>Самодостаточный HTML как attachment</td></tr>
+<tr><td>POST <code>/mcp</code></td><td>JSON-RPC MCP</td></tr>
+<tr><td>POST <code>/api/orbit/connect</code></td><td>Создать браузерную сессию</td></tr>
+<tr><td>POST <code>/api/orbit/poll</code></td><td>Обновить снимок и получить до 16 команд</td></tr>
+<tr><td>POST <code>/api/orbit/ack</code></td><td>Подтвердить команду и новый снимок</td></tr>
+<tr><td>POST <code>/api/orbit/disconnect</code></td><td>Пометить вкладку отключённой, истечь pending-команды</td></tr>
+</tbody></table></div>
+<p>JSON API отвечает <code>Content-Type: application/json</code>, <code>Cache-Control: no-store</code>, <code>X-Content-Type-Options: nosniff</code>. Статика получает no-cache. Тела JSON ограничены 524288 байтами; проверяются Content-Length и фактическая UTF-8 длина. Ограничение относится ко всему HTTP-запросу, а не только к вложенному project.</p>
+<p>Браузерный API принимает только POST. Если Origin передан, он должен совпадать с origin запроса или каноническим ORBIT origin. Отсутствие Origin само по себе не заменяет проверку личности. Это не общедоступный CORS API для произвольных сайтов.</p>
+<h3 id="c6-h67">connect / poll / ack / disconnect</h3>
+<pre data-language="json"><code>{&quot;label&quot;:&quot;ORBIT · браузер&quot;,&quot;snapshot&quot;:{&quot;project&quot;:{},&quot;state&quot;:{&quot;audio_ready&quot;:false}}}</code></pre>
+<p>Это форма connect; реальная студия отправляет полный снимок. Ответ содержит <code>session_id</code>. Poll принимает <code>session_id</code> и новый <code>snapshot</code>, отвечает <code>commands:[{id,tool,arguments}]</code>. Команды сортируются по created_at и rowid; возвращаются только pending и ещё не истёкшие.</p>
+<pre data-language="json"><code>{&quot;session_id&quot;:&quot;SESSION_ID&quot;,&quot;command_id&quot;:&quot;COMMAND_ID&quot;,&quot;result&quot;:{&quot;ok&quot;:true,&quot;value&quot;:{&quot;scheduled&quot;:true}},&quot;snapshot&quot;:{&quot;project&quot;:{},&quot;state&quot;:{}}}</code></pre>
+<p>Ack проверяет пользователя, сессию и команду, затем сохраняет статус done/error, result и snapshot. Повторный ack уже завершённой команды не меняет её результат. Просроченный pending ack получает COMMAND_EXPIRED. Disconnect принимает только session_id, сбрасывает updated_at и expires_at pending-команд. При pagehide браузер пытается отправить disconnect через sendBeacon; доставка beacon не гарантирована.</p>
+<h3 id="c6-h68">D1</h3>
+<div class="table-wrap"><table><thead><tr><th>Таблица</th><th>Поля</th></tr></thead><tbody>
+<tr><td>orbit_mcp_sessions</td><td>id PK, user_id, label, snapshot JSON string, updated_at epoch ms</td></tr>
+<tr><td>orbit_mcp_commands</td><td>id PK, user_id, session_id, tool, arguments JSON string, created_at, expires_at, status, result JSON string/null</td></tr>
+</tbody></table></div>
+<p>Индексы: sessions(user_id,updated_at) и commands(session_id,user_id,status,created_at). Миграция: <code>drizzle/0000_orbit_mcp.sql</code>; журнал миграций хранится в <code>drizzle/meta/_journal.json</code>. В manifest D1 binding — строка <code>DB</code>. R2 не используется.</p>
+<p>Все операции пользователя фильтруются по user_id; владение сессией проверяется до изменения. SQL использует bind-параметры. В этой схеме нет отдельных таблиц песен или проектов: одна активная сессия хранит один последний снимок.</p>
+<h3 id="c6-h69">Очередь, сроки и повторные доставки</h3>
+<div class="table-wrap"><table><thead><tr><th>Настройка</th><th>Значение</th></tr></thead><tbody>
+<tr><td>Активность сессии</td><td>Снимок обновлялся в пределах примерно 90 с</td></tr>
+<tr><td>Интервал следующего browser poll</td><td>900 мс после завершения предыдущего прохода</td></tr>
+<tr><td>Тайм-аут browser fetch</td><td>12 с</td></tr>
+<tr><td>Максимум команд за poll</td><td>16</td></tr>
+<tr><td>Лимит живых pending на сессию</td><td>64</td></tr>
+<tr><td>TTL play_notes/trigger_pad/transport</td><td>15 с</td></tr>
+<tr><td>TTL остальных изменений</td><td>90 с</td></tr>
+<tr><td>Ожидание ack в tools/call</td><td>До 12 проверок с паузами 250 мс, плюс время DB</td></tr>
+<tr><td>Кэш результатов в памяти вкладки</td><td>128 command_id</td></tr>
+<tr><td>Очистка старых записей</td><td>При новом connect: команды с expires_at старше 24 ч и сессии с updated_at старше 24 ч</td></tr>
+</tbody></table></div>
+<p>Очистка запускается при connect, это не гарантированный фоновый TTL-сервис. Записи могут оставаться дольше 24 часов, если никто не подключается. Поллинг не push/WebSocket; фоновые вкладки и энергосбережение могут задерживать доставку. Сервер хранит команды, но не генерирует звук вместо закрытой вкладки.</p>
+<h3 id="c6-h70">MCP JSON-RPC</h3>
+<p>Реализованы <code>server/discover</code>, <code>initialize</code>, <code>ping</code>, <code>tools/list</code>, <code>tools/call</code> и принятие <code>notifications/*</code> с HTTP 202. Основная объявленная версия в коде — <code>2026-07-28</code>; initialize при другом запросе отвечает fallback <code>2025-11-25</code>. Это описание совместимости конкретной реализации, не обещание поддержки всех возможностей будущих стандартов MCP.</p>
+<pre data-language="json"><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;tools/call&quot;,&quot;params&quot;:{&quot;name&quot;:&quot;orbit_list_instruments&quot;,&quot;arguments&quot;:{}}}</code></pre>
+<pre data-language="json"><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;result&quot;:{&quot;content&quot;:[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;{\&quot;instruments\&quot;:[]}&quot;}],&quot;isError&quot;:false}}</code></pre>
+<p>Полезная нагрузка ORBIT находится в JSON-строке text и требует ещё одного JSON.parse при использовании низкоуровневого клиента. Ошибки команды обычно возвращаются как result с isError=true, а не HTTP 500. Ошибки JSON-RPC имеют коды −32700/−32600/−32601/−32602. GET /mcp отвечает 405 с Allow: POST. Batch RPC, SSE-streaming, MCP resources и prompts в сервере не реализованы.</p>
+<h3 id="c6-h71">Идентификация и границы доверия</h3>
+<p>Production Worker доверяет <code>oai-authenticated-user-id</code>, который устанавливает Sites. Он не проверяет собственную сессию логина по cookie и не верифицирует самостоятельно подпись bearer token. Без доверенного прокси перед Worker такой заголовок можно подделать; при переносе на другой хостинг orbitUser нужно заменить реальной проверкой личности. Тестовая подстановка личности допустима только в loopback preview.</p>
+<p>Схемы инструментов запрещают лишние поля и не содержат eval/execute_script. Это ограничивает команды явным набором операций; не означает, что вся браузерная среда стала изолированным sandbox для недоверенных скриптов. Не добавляйте произвольное исполнение кода как способ управления студией.</p>
+<p>Site остаётся с прежней приватной аудиторией. Изменение адреса или развёртывание копии не переносит автоматически аккаунты, OAuth, D1 и права. Endpoint позволяет менять музыкальный проект; не публикуйте секреты в проекте, примерах или документации.</p></section><section class="doc-section" data-chapter="7"><h2 id="c7-h72">Разработка, сборка и публикация</h2>
+<h3 id="c7-h73">Исходники</h3>
+<p>В комплект включён <code>source/orbit-mcp-source.zip</code>. После распаковки корень проекта — <code>orbit-mcp/</code>. Сборка не требует npm install: package.json не содержит зависимостей. Внешний runtime для исходников — Node.js; backend-тесты используют встроенный <code>node:sqlite</code>. В README проекта указан Node.js 22.13+, предпочтительна ветка 24. Это требование сохранённой реализации, не рекомендация обновляться на непроверенную будущую версию.</p>
+<div class="table-wrap"><table><thead><tr><th>Путь от корня исходников</th><th>Назначение</th></tr></thead><tbody>
+<tr><td>web/index.html</td><td>Авторитетный исходник интерфейса, CSS, state, пресетов и браузерного аудио</td></tr>
+<tr><td>web/tone.js</td><td>Вендорный Tone.js 14.8.49</td></tr>
+<tr><td>web/Tone.js.LICENSE.txt</td><td>MIT-уведомление Tone.js</td></tr>
+<tr><td>mcp/protocol.js</td><td>Схемы всех tools и общий валидатор</td></tr>
+<tr><td>mcp/browser.js</td><td>OrbitControl, snapshot, браузерный connect/poll/ack</td></tr>
+<tr><td>worker/server.js</td><td>Worker fetch, auth, API, D1 и JSON-RPC</td></tr>
+<tr><td>scripts/build-mcp.mjs</td><td>Генерация каталога, вставка моста, Worker и standalone</td></tr>
+<tr><td>scripts/validate-mcp-artifact.mjs</td><td>Проверка импортируемого fetch, страницы и 15 tools</td></tr>
+<tr><td>tests/mcp.test.mjs</td><td>8 backend-тестов</td></tr>
+<tr><td>tests/d1.mjs</td><td>D1-подобный адаптер поверх node:sqlite для тестов</td></tr>
+<tr><td>drizzle/0000_orbit_mcp.sql</td><td>Первая миграция сессий и команд</td></tr>
+<tr><td>drizzle/meta/_journal.json</td><td>Журнал миграций</td></tr>
+<tr><td>.openai/hosting.json</td><td>Identity проекта и bindings Sites</td></tr>
+<tr><td>README.md</td><td>Краткая памятка разработчику</td></tr>
+</tbody></table></div>
+<p><code>dist/</code>, <code>build/</code>, <code>.wrangler/</code> игнорируются Git. Не редактируйте dist/server/index.js или скачанный standalone как основной исходник: следующая сборка перезапишет результат.</p>
+<h3 id="c7-h74">Команды</h3>
+<p>В корне распакованных исходников:</p>
+<pre data-language="sh"><code>node scripts/build-mcp.mjs
+node scripts/validate-mcp-artifact.mjs
+node --test tests/mcp.test.mjs</code></pre>
+<p>Эквивалентные scripts: <code>npm run build</code>, <code>npm test</code>; установки npm-зависимостей им не требуется. После изменения исходников сначала пересоберите dist, поскольку тесты читают собранный Worker.</p>
+<h3 id="c7-h75">Что делает build</h3>
+<ol>
+<li>Читает web/index.html.</li>
+<li>Извлекает 36 пресетов и категории из известных участков исходника; проверяет полноту каталога.</li>
+<li>Заменяет маркер <code>/* ORBIT_MCP_BRIDGE */</code> на каталог, protocol и browser bridge.</li>
+<li>Встраивает HTML, Tone.js и лицензию в Worker вместе с protocol и backend.</li>
+<li>Копирует hosting.json в dist/.openai.</li>
+<li>Создаёт build/index.html, build/catalog.json и самодостаточный build/music-keyboard-studio.html.</li>
+</ol>
+<div class="table-wrap"><table><thead><tr><th>Результат</th><th>Использование</th></tr></thead><tbody>
+<tr><td>dist/server/index.js</td><td>Worker ESM entrypoint для развёртывания</td></tr>
+<tr><td>dist/.openai/hosting.json</td><td>Metadata размещения в deploy archive</td></tr>
+<tr><td>build/index.html</td><td>Веб-страница с внешним локальным tone.js</td></tr>
+<tr><td>build/catalog.json</td><td>Каталог инструментов</td></tr>
+<tr><td>build/music-keyboard-studio.html</td><td>Автономная версия для скачивания</td></tr>
+</tbody></table></div>
+<p><code>build/index.html</code> сам по себе ожидает соседний tone.js: для простого статического preview используйте standalone или скопируйте библиотеку. Полный HTTP preview Worker автоматически обслуживает /tone.js.</p>
+<p>Парсер build использует регулярные выражения и границы <code>const presets</code>, <code>const presetGroups</code>, <code>const midiPrograms</code>. При рефакторинге этих объявлений обновите парсер. Сейчас количество 36 проверяется жёстко. При добавлении инструментов нужно изменить эту проверку, каталог, диапазон ID, тесты и документацию.</p>
+<h3 id="c7-h76">Локальная проверка</h3>
+<p>Для обычной игры откройте build/music-keyboard-studio.html через file://. Для контроля UI по HTTP можно запустить:</p>
+<pre data-language="sh"><code>python3 -m http.server 8766 --bind 127.0.0.1 --directory build</code></pre>
+<p>Откройте <code>http://127.0.0.1:8766/music-keyboard-studio.html</code>. Это статический сервер: /api/orbit не реализован, поэтому MCP-индикатор может показывать недоступность. Такая ошибка не означает, что standalone не играет.</p>
+<p>Для полного локального Worker+MCP теста используйте включённый <code>examples/local-preview.mjs</code>. Запускайте его из корня исходников, передав абсолютный путь к самому скрипту:</p>
+<pre data-language="sh"><code>node /absolute/path/ORBIT-Documentation/examples/local-preview.mjs</code></pre>
+<p>Он слушает только 127.0.0.1:8765, подключает tests/d1.mjs, создаёт SQLite в памяти и подставляет тестового пользователя <code>qa-owner</code>. Данные исчезают при остановке. Не размещайте этот адаптер в production и не меняйте bind на 0.0.0.0: он сознательно не реализует реальную авторизацию.</p>
+<p>Пример запроса к локальному preview:</p>
+<pre data-language="sh"><code>curl http://127.0.0.1:8765/mcp \
+  -H &#x27;Content-Type: application/json&#x27; \
+  --data &#x27;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;tools/list&quot;}&#x27;</code></pre>
+<p>Сначала откройте локальную студию и нажмите Start Audio, если проверяете команды звука. Аналогичный curl к production без авторизованного подключения не заменяет OAuth и права доступа.</p>
+<h3 id="c7-h77">Manifest текущего сайта</h3>
+<pre data-language="json"><code>{&quot;project_id&quot;:&quot;appgprj_6ae3255ff4f881919a4b6b2b62034fb8&quot;,&quot;capabilities&quot;:[&quot;mcp&quot;],&quot;d1&quot;:&quot;DB&quot;,&quot;r2&quot;:null}</code></pre>
+<p><code>d1</code> — строка имени binding, не объект <code>{binding:&quot;DB&quot;}</code>. Сайт использует Worker ESM, поэтому поле static не задано. При простой правке UI сохраняйте все имеющиеся поля и ID. Существующий ID нельзя присваивать постороннему новому проекту без соответствующего владения и привязки репозитория.</p>
+<h3 id="c7-h78">Публикация через Sites</h3>
+<p>Это описание рабочего процесса, доступного при наличии плагина Sites у редактора. Нативные tools и их схемы проверяйте в установленной версии плагина; они не являются CLI-командами пакета ORBIT.</p>
+<ol>
+<li>Получите существующий сайт через get_site и сохраните прежнюю аудиторию. Текущий сайт подтверждался owner-private.</li>
+<li>Получите временный source repository write credential через create_source_repository_write_credential.</li>
+<li>Откройте/синхронизируйте checkout source helper до редактирования. Если доступ использует work_proxy, не создавайте собственные token headers.</li>
+<li>Измените исходники, соберите и выполните подходящие проверки.</li>
+<li>Запустите source helper для commit/push/package. Передавайте credential через stdin, а не аргументы командной строки или файлы.</li>
+<li>Передайте точные возвращённые project_id, commit_sha и archive в save_version_and_deploy_private для подтверждённого owner-private сайта. Для иной аудитории применяется соответствующий обычный workflow, без скрытого изменения доступа.</li>
+<li>Если ответ pending/building/publishing, отслеживайте get_deployment_status до terminal. succeeded подтверждает публикацию. При уже сохранённой версии повторяйте deployment, а не создавайте дубликаты version.</li>
+<li>Проверьте страницу, MCP и загрузку standalone при необходимости; сохраните source provenance.</li>
+</ol>
+<p>Source helper поставляется Sites-плагином. Его путь зависит от установки; не переносите абсолютный путь чужой машины как настройку проекта. Форма запуска:</p>
+<pre data-language="sh"><code>node /path/to/sites-plugin/scripts/site-workflow.mjs --project-id EXACT_PROJECT_ID</code></pre>
+<p>После «Ready for Site workflow JSON on stdin» helper получает объект:</p>
+<pre data-language="json"><code>{&quot;credential&quot;:&quot;RETURNED_CREDENTIAL_OBJECT&quot;,&quot;source&quot;:&quot;PRIOR_OPEN_RESULT_OBJECT&quot;,&quot;commands&quot;:[],&quot;archivePath&quot;:&quot;/absolute/path/deploy.tar.gz&quot;}</code></pre>
+<p>Два строковых значения в примере — обозначения объектов, не буквальные рабочие данные. В реальном JSON подставляются целые возвращённые объекты. <code>commands</code> — массивы аргументов оставшихся проверок/сборок. Для открытия archivePath опускается; при упаковке архив должен соответствовать точному pushed commit. Секреты не сохраняются в документации, ZIP, Git или отчёте.</p>
+<h3 id="c7-h79">Как добавлять возможности</h3>
+<p>Для нового тембра добавьте preset, включите ID в presetGroups, задайте midiPrograms и при необходимости расширьте synthFactory/StringSynth. Сохраняйте старые ID, чтобы ранее сохранённые проекты открывались корректно. Проверьте C4/A4, полифонию, Sustain, Stop, переключение инструментов, live/seq/remote и offline WAV.</p>
+<p>Для новой MCP-команды добавьте строгую inputSchema, описание с единицами и annotations в protocol; обработчик в OrbitControl.invoke; серверное чтение или очередь в worker; TTL по характеру команды; тесты ошибок и повторных доставок. Не добавляйте произвольный JavaScript evaluator. Обновите жёсткие ожидания количества tools в validator и тестах, если количество изменилось.</p>
+<p>Изменение DB требует новой миграции и записи журнала; опубликованную миграцию не переписывайте как способ эволюции схемы. Изменение формата проекта требует решения о backward compatibility и версии. Текущее приложение принимает version=1; автоматического универсального мигратора версий нет.</p>
+<h3 id="c7-h80">Лицензия и зависимости</h3>
+<p>Bundled Tone.js сопровождается MIT-лицензией в web/Tone.js.LICENSE.txt. Сохраняйте это уведомление при распространении standalone/сборки. Собственная лицензия всего ORBIT в корне репозитория не объявлена; не следует автоматически считать весь проект MIT только из-за лицензии Tone.js. В приложении не требуется внешняя загрузка шрифтов: используется локальный Avenir Next с fallback Trebuchet MS/sans-serif.</p></section><section class="doc-section" data-chapter="8"><h2 id="c8-h81">Диагностика и ограничения</h2>
+<h3 id="c8-h82">Если не слышно звук</h3>
+<p>Проверьте Start Audio/Audio ON и активность вкладки, системный выход и громкость. Убедитесь, что Master и нужный канал не Mute, velocity и sound.volume не слишком низкие, фильтр не закрыт. Для MCP сначала получите список сессий, затем audio_ready. После перезагрузки страницы снова нужен локальный запуск аудио. Закрытая или приостановленная вкладка не может синтезировать звук через Worker.</p>
+<p>Запрошенная нота может быть ниже/выше текущего видимого диапазона клавиатуры и при этом звучать. Статус scheduled — подтверждение планирования, а не измерение системного выхода. Если Scale Lock изменяет высоту, для точного прослушивания используйте <code>orbit_play_notes respect_scale=false</code> либо выключите Scale Lock для локальной игры.</p>
+<h3 id="c8-h83">Индикатор MCP</h3>
+<div class="table-wrap"><table><thead><tr><th>Текст</th><th>Значение и действие</th></tr></thead><tbody>
+<tr><td>MCP · веб-версия ↗</td><td>Открыт file://; кнопка открывает веб-студию, удалённое управление файлом не включается</td></tr>
+<tr><td>MCP · подключение…</td><td>Создаётся браузерная сессия</td></tr>
+<tr><td>MCP ● подключён</td><td>Сессия зарегистрирована; audio_ready проверяется отдельно</td></tr>
+<tr><td>MCP · восстанавливаем связь…</td><td>Ошибка сети/тайм-аут; мост продолжает попытки при enabled</td></tr>
+<tr><td>MCP · войдите в студию</td><td>Нет принятой сервером авторизации либо запрос отклонён</td></tr>
+<tr><td>MCP · переподключить</td><td>Сессия не найдена; нажмите кнопку для нового connect</td></tr>
+<tr><td>MCP ○ отключён</td><td>Управление этой вкладкой отключено пользователем</td></tr>
+<tr><td>MCP · недоступен</td><td>Connect не удался; проверьте настоящий hosted origin и сервер</td></tr>
+</tbody></table></div>
+<p>Статический localhost-сервер не имеет /api/orbit. Для него недоступный MCP нормален. Полный preview из examples обслуживает Worker с тестовой D1.</p>
+<h3 id="c8-h84">Ошибки сервера и протокола</h3>
+<div class="table-wrap"><table><thead><tr><th>Код/ошибка</th><th>Причина</th><th>Действие</th></tr></thead><tbody>
+<tr><td>AUTH_REQUIRED</td><td>Нет доверенной личности Sites</td><td>Войти в студию/переподключить личный плагин</td></tr>
+<tr><td>STORAGE_UNAVAILABLE</td><td>В env нет DB</td><td>Проверить manifest, binding и публикацию</td></tr>
+<tr><td>NO_SESSION</td><td>Нет активной веб-вкладки этого пользователя</td><td>Открыть веб-студию и дождаться подключения</td></tr>
+<tr><td>SESSION_REQUIRED</td><td>Активных вкладок несколько</td><td>Список сессий → явный session_id</td></tr>
+<tr><td>SESSION_NOT_FOUND</td><td>ID не найден или принадлежит другому пользователю</td><td>Получить свежий ID своей сессии</td></tr>
+<tr><td>SESSION_OFFLINE</td><td>Снимок устарел примерно на 90 с</td><td>Вернуться во вкладку, переподключиться</td></tr>
+<tr><td>QUEUE_FULL</td><td>Уже 64 действующие pending-команды</td><td>Проверить состояния, дождаться выполнения</td></tr>
+<tr><td>COMMAND_NOT_FOUND</td><td>Нет такой команды у пользователя</td><td>Проверить ID, не использовать UUID другого сеанса</td></tr>
+<tr><td>COMMAND_EXPIRED</td><td>Ack пришёл после срока</td><td>Проверить локальный результат; не дублировать вслепую</td></tr>
+<tr><td>ORIGIN_MISMATCH</td><td>Браузерный Origin не соответствует студии</td><td>Использовать штатную страницу/правильный origin preview</td></tr>
+<tr><td>INVALID_JSON</td><td>Некорректное тело JSON</td><td>Исправить JSON и Content-Type</td></tr>
+<tr><td>INVALID_ARGUMENT</td><td>Ошибка схемы либо обычная ошибка команды без отдельного code</td><td>Прочитать точный путь поля и сообщение</td></tr>
+<tr><td>HTTP 413</td><td>Тело больше 512 KiB</td><td>Уменьшить запрос; крупный проект открыть файловым интерфейсом</td></tr>
+<tr><td>HTTP 415</td><td>Не application/json</td><td>Указать корректный Content-Type</td></tr>
+<tr><td>HTTP 405 на GET /mcp</td><td>MCP принимает POST</td><td>Использовать MCP-клиент или POST JSON-RPC</td></tr>
+</tbody></table></div>
+<p>Имена ошибок браузерного исполнителя могут находиться внутри строки error, а не в отдельном code. <code>AUDIO_NOT_READY</code> просит Start Audio. <code>AUDIO_STARTING</code> означает незавершённый запуск движка. <code>BUSY</code> просит дождаться рендера WAV. Ошибки «нет изменений для отмены» или «нота выходит за длину паттерна» исправляются изменением операции, а не повторной отправкой тех же аргументов.</p>
+<h3 id="c8-h85">Сэмплы и проекты</h3>
+<p>Если после перезагрузки вместо пользовательского сэмпла играет другой звук, проверьте, был ли сохранён JSON с sample.data. Автосохранение и серверный снимок сохраняют только имя. Загрузите исходный аудиофайл заново либо полный ранее скачанный JSON.</p>
+<p>Если проект не открывается, проверьте version=1, pattern/events/sound/fx/arp/tracks/samples и допустимую scale. Четыре tracks и четыре drum-строки обязательны. Файл UI ограничен 100 MB в десятичном счёте; один загружаемый аудиофайл — 8 MB. JSON с base64 обычно больше исходного аудиофайла.</p>
+<p>Если WAV кажется слишком тихим, проверьте уровни перед экспортом. Если отличается ритм, учтите ограничения swing/humanize и live arp: offline export строится из событий, а не из записанного системного сигнала. Если хвост обрезан, сравните Delay feedback с фиксированной формулой хвоста.</p>
+<h3 id="c8-h86">Интерфейс</h3>
+<p>Нечитаемый белый список был исправлен через <code>color-scheme:dark</code> и явные цвета option/optgroup/checked. Эта правка включена в исходники и standalone данной редакции. Если старая копия всё ещё белая, перезагрузите веб-страницу либо скачайте обновлённый HTML. Системные popup могут по-разному рисоваться браузером/ОС; проверка только закрытого select не заменяет проверку раскрытого меню.</p>
+<p>На узких экранах микшер скрывается в выдвижную панель, пэды располагаются в четыре колонки. Клавиатуру можно прокручивать горизонтально. Отсутствие фейдеров слева на телефоне не означает, что микшер удалён.</p>
+<h3 id="c8-h87">Известные границы этой версии</h3>
+<ul>
+<li>Один текущий мелодический пресет для live/seq/remote, а не отдельный инструмент на каждую дорожку.</li>
+<li>Нет автоматического облачного сохранения песен, общего редактирования, серверного аудиорендера или воспроизведения без браузера.</li>
+<li>Нет импорта MIDI-файла, аудиозаписи микрофона, Web MIDI input/output, VST/AU-плагинов, полноценного аранжировщика или экспорта stems.</li>
+<li>Сэмплы воспроизводятся как аудиобуферы; нет встроенного редактора срезов/таймстретча/нормализации.</li>
+<li>Последовательные удалённые play_notes не предназначены для точного ритма; используйте паттерн.</li>
+<li><code>orbit_play_notes</code> допускает до 12 нот за вызов и максимум 4 четверти удержания. MIDI 0–127 валиден по схеме, но крайние высоты могут быть практически непригодны конкретной модели струны/синтеза.</li>
+<li>История отмены содержит pattern/events/length, но не все параметры. Загрузка проекта очищает историю.</li>
+<li>Потеря ack и перезагрузка вкладки не дают строгой гарантии exactly-once; память кэша результатов ограничена жизнью страницы.</li>
+<li>Параметры sample-экспорта/воспроизведения записанных loop/gate-событий имеют различия между realtime reschedule и offline render; сложные sample-партии стоит проверять прослушиванием обеих версий.</li>
+<li>Клиентский state/снимок может устаревать; audio_ready не гарантирует, что ОС не отключила звук после последнего poll.</li>
+<li>Автосохранение file:// зависит от политики браузера и места файла; перенос файла не является переносом localStorage.</li>
+</ul>
+<h3 id="c8-h88">Что сообщить при диагностике</h3>
+<p>Укажите веб-версию или имя standalone, действие, полученный текст ошибки, выбранную сессию, возраст снимка, audio_ready, имя тембра и BPM. Для pending сохраните command_id и результат command_status. Приложите минимальный проект без частных аудиоданных, если они не нужны для воспроизведения ошибки. Не передавайте OAuth-токены или source credentials.</p></section><section class="doc-section" data-chapter="9"><h2 id="c9-h89">Проверки и история</h2>
+<h3 id="c9-h90">Версия документации</h3>
+<p>Дата: 30 октября 2026 года, Europe/Moscow. Package/serverInfo: 2.0.0. Формат проекта: version 1. Каталог: 36 инструментов. MCP: 15 tools. Commit исходников: 6550ce0988f9f51ea24905cb374491a3e7b3405d.</p>
+<p>Эта документация сформирована чтением текущих исходников; каталоги, исходные параметры, схемы и стартовый проект извлечены автоматически из той же версии. Она не является обещанием совместимости с будущими публикациями. Машиночитаемые ссылки и контрольные суммы — в manifest.json.</p>
+<h3 id="c9-h91">Проверено заново при подготовке документации</h3>
+<p>Команда <code>node --test tests/mcp.test.mjs</code> завершилась успешно: <strong>8 тестов, 8 passed, 0 failed</strong>. Тесты используют собранный Worker и тестовую D1 через node:sqlite. Предупреждение Node об experimental SQLite относится к тестовому адаптеру, не является провалом теста.</p>
+<div class="table-wrap"><table><thead><tr><th>Проверка</th><th>Что подтверждает</th></tr></thead><tbody>
+<tr><td>Discovery/catalog/artifact</td><td>Объявленная версия протокола, 15 схем, 36 инструментов, GET / =200, GET /mcp =405</td></tr>
+<tr><td>Auth isolation</td><td>Ошибки без личности, невидимость чужих сессий и снимков</td></tr>
+<tr><td>Несколько вкладок</td><td>Требование явного session_id при нескольких активных</td></tr>
+<tr><td>Strict validation</td><td>Отклонение невалидного BPM, произвольного script и нот за диапазоном</td></tr>
+<tr><td>Ack/idempotency</td><td>Выполнение очереди, обновление состояния, неизменность результата повторного ack</td></tr>
+<tr><td>Browser error</td><td>Передача ошибки исполнения как MCP isError</td></tr>
+<tr><td>Expiry</td><td>Просроченные ноты не выдаются poll, статус становится expired</td></tr>
+<tr><td>Origin/limits/disconnect</td><td>Same-origin, ограничение размера и отключение сессии</td></tr>
+</tbody></table></div>
+<h3 id="c9-h92">Ранее выполненные интеграционные проверки</h3>
+<p>Во время создания MCP выполнялся отдельный браузерный сценарий с 25 проверками: настройка UI, секвенсор, Piano Roll и Undo, ошибка до разрешения аудио, звучащий аккорд, запись длительностей, потеря ack без повторной ноты, JSON/WAV, ненулевой WAV-сигнал, генератор, несколько вкладок, disconnect и мобильная ширина без переполнения. Эти сценарии находились в рабочей папке разработки; они не являются частью npm test сохранённого репозитория и при подготовке этой документации полностью заново не запускались.</p>
+<p>Автономный HTML ранее проверялся без сети. Проверялись 36 пресетов, струны, избранное, arp и WAV. Отдельно исследовалась настройка струнных моделей по A3; результаты были проверкой конкретной сборки, не гарантией идеальной точности любой ноты на всех устройствах.</p>
+<p>После публикации нативные MCP-команды реально получили каталог и текущий проект веб-сессии. В этой беседе были успешно выполнены выбор Concert Harp и C4–E4–G4 с ack status=done. Это подтверждает работающий production-маршрут клиент → Worker → браузер, но не заменяет регрессионный тест всех функций.</p>
+<h3 id="c9-h93">История изменений этой работы</h3>
+<ol>
+<li>Создана интерактивная студия с клавиатурой, пэдами, секвенсором, Piano Roll, эффектами, визуализацией, Playground и экспортом.</li>
+<li>Каталог расширен до 36 инструментов, включая модельные щипковые струны, 808, характерные духовые/язычковые и дополнительные синтезаторы.</li>
+<li>Добавлены избранное, собственный StringSynth и автономная сборка.</li>
+<li>Добавлен удалённый MCP: Worker ESM, D1, 15 tools, браузерная очередь, ack, истечение команд и раздельный remote-голос.</li>
+<li>Исправлен manifest D1: <code>&quot;d1&quot;:&quot;DB&quot;</code> вместо объекта binding. Текущая публикация подтвердила has_mcp=true.</li>
+<li>Исправлена читаемость системных выпадающих списков через тёмную цветовую схему и явные цвета пунктов. Текущий commit включает эту правку.</li>
+<li>Сохранён настоящий комплект документации и исходников.</li>
+</ol>
+<h3 id="c9-h94">Последняя подтверждённая публикация исходников</h3>
+<p>Site: <code>appgprj_6ae3255ff4f881919a4b6b2b62034fb8</code>. Deployment: <code>appgdep_6ae44413c7988191b596949dd4c0cd7a</code>. Version: <code>appgprj_6ae3255ff4f881919a4b6b2b62034fb8~appgver_efe08d0c7ef88191a59f47a4c9dbfca0</code>. Статус публикации: succeeded; has_mcp=true. URL: <code>https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site</code>.</p>
+<p>Идентификаторы служат provenance, не являются секретами или заменой прав доступа. Документация сохраняется локально; её подготовка не меняет проект в открытой студии и не создаёт новую публикацию сайта.</p>
+<h3 id="c9-h95">Ручной регрессионный список для будущих изменений</h3>
+<ol>
+<li>Собрать Worker, выполнить validator и backend-тесты.</li>
+<li>Открыть standalone без сети; Start Audio; сыграть клавиатурой и касанием.</li>
+<li>Проверить переключение тембров, Sustain, pitch reset, Stop и отсутствие зависших нот.</li>
+<li>Проверить секвенсор 16/32, Loop, запись и Piano Roll/Undo.</li>
+<li>Загрузить сэмпл, сохранить полный JSON, восстановить в новой вкладке.</li>
+<li>Экспортировать MIDI и WAV, проверить звук/события и заявленные ограничения.</li>
+<li>Веб-версия: подключение MCP, read state, configure, короткая нота, pending/status, несколько сессий.</li>
+<li>Проверить раскрытые select в целевом браузере и мобильную ширину; убедиться в читаемости.</li>
+</ol>
+<p>Прохождение одного backend test suite не проверяет драйвер звука, визуальный контраст системного popup, разрешения браузера на скачивание или качество всех тембров.</p>
+<h3 id="c9-h96">Проверка самого комплекта документации</h3>
+<p>Проверены 18 примеров MCP-запросов, включая последовательность «арфа и C–E–G», против mcpValidateCall из сохранённого исходника. Стартовый JSON-проект прошёл ProjectStorage.validate. Проверены корректность JSON, уникальность HTML-якорей, все ссылки оглавления, отсутствие внешних скриптов/шрифтов и целостность ZIP. Для файлов сохранены SHA-256 в manifest.json.</p>
+<p>Встроенный браузер запретил открытие локального HTML по своей политике URL. Поэтому интерактивный поиск, печать и визуальная вёрстка документа не подтверждены браузерным прогоном; проверены структура HTML и синтаксис встроенного JavaScript. Документ можно самостоятельно открыть скачанным файлом в обычном браузере. Приложение и текущий музыкальный проект при подготовке документации не изменялись.</p></section><footer>Автономный документ без внешних скриптов, шрифтов и сетевых запросов. Исходная версия: 6550ce0988f9f51ea24905cb374491a3e7b3405d.</footer></main></div><script>
+const search=document.querySelector('#search');const sections=[...document.querySelectorAll('.doc-section')];const nav=[...document.querySelectorAll('aside a')];const texts=sections.map(s=>s.textContent.toLocaleLowerCase('ru'));
+search.addEventListener('input',()=>{const terms=search.value.trim().toLocaleLowerCase('ru').split(/\s+/).filter(Boolean);let count=0;sections.forEach((s,i)=>{const show=terms.every(q=>texts[i].includes(q));s.hidden=!show;if(show)count++;nav.filter(a=>a.dataset.chapter===s.dataset.chapter).forEach(a=>a.hidden=!show)});document.querySelector('#searchStatus').textContent=terms.length?'Найдено глав: '+count+' из '+sections.length:'Все '+sections.length+' глав. Поиск проверяет все слова запроса внутри главы.'});
+document.querySelector('#print').addEventListener('click',()=>window.print());
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus()}});
+</script></body></html>

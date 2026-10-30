@@ -1,0 +1,94 @@
+{
+  "scales": {
+    "minor": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ],
+    "major": [
+      0,
+      2,
+      4,
+      5,
+      7,
+      9,
+      11
+    ],
+    "dorian": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      9,
+      10
+    ],
+    "pentatonic": [
+      0,
+      3,
+      5,
+      7,
+      10
+    ],
+    "chromatic": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "fxDefaults": {
+    "reverb": {
+      "on": true,
+      "a": 2.5,
+      "b": 0.2
+    },
+    "delay": {
+      "on": false,
+      "a": 0.3,
+      "b": 0.22
+    },
+    "distortion": {
+      "on": false,
+      "a": 0.25,
+      "b": 0.25
+    },
+    "chorus": {
+      "on": false,
+      "a": 1.7,
+      "b": 0.3
+    },
+    "phaser": {
+      "on": false,
+      "a": 0.7,
+      "b": 0.3
+    },
+    "filter": {
+      "on": false,
+      "a": 4500,
+      "b": 1.3
+    },
+    "tremolo": {
+      "on": false,
+      "a": 5,
+      "b": 0.4
+    },
+    "compressor": {
+      "on": true,
+      "a": -22,
+      "b": 3
+    }
+  }
+}

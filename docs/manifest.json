@@ -1,0 +1,121 @@
+{
+  "title": "ORBIT — полная документация",
+  "date": "2026-10-30",
+  "timezone": "Europe/Moscow",
+  "source_commit": "6550ce0988f9f51ea24905cb374491a3e7b3405d",
+  "chapters": 10,
+  "instrument_count": 36,
+  "tool_count": 15,
+  "files": [
+    {
+      "path": "00-Начните-здесь.md",
+      "bytes": 6633,
+      "sha256": "464cdc9d58a606baf7d4f65940b3af98def100940793a33fdfce2a8f79c94cd8"
+    },
+    {
+      "path": "01-Руководство-пользователя.md",
+      "bytes": 15710,
+      "sha256": "f57db6a1533580343793b30ef3c311acd834d5feccc557bb9ef69b0ee2226b3d"
+    },
+    {
+      "path": "02-Инструменты-и-звук.md",
+      "bytes": 15148,
+      "sha256": "153b9580da5ec3c679d2c8faa5d1d9b7e8b93bae069f7116a78b53feef60f876"
+    },
+    {
+      "path": "03-MCP-практика.md",
+      "bytes": 10987,
+      "sha256": "a3a6296eae3e867a6eff554ffc11695aef627157ade66f2073445c0a8a53e9ab"
+    },
+    {
+      "path": "04-MCP-справочник.md",
+      "bytes": 25362,
+      "sha256": "95808a29b774467180a50cb931f0c8350b901302f85fcf5e54b77bfa80911ca0"
+    },
+    {
+      "path": "05-Проекты-и-экспорт.md",
+      "bytes": 11822,
+      "sha256": "20232f5a86c2bb96f0792c252943c8041db79af29accd565eedbe48ea3e7249a"
+    },
+    {
+      "path": "06-Архитектура-и-HTTP.md",
+      "bytes": 12225,
+      "sha256": "1d3d0a09d55436e853265ab9e240e406e83bdfafb3eb174e231779ffec554cb5"
+    },
+    {
+      "path": "07-Разработка-и-публикация.md",
+      "bytes": 13006,
+      "sha256": "e0212c21999e011febd3aca0285c860748eaa87646d4a0c72ef8746c320257d6"
+    },
+    {
+      "path": "08-Диагностика-и-ограничения.md",
+      "bytes": 11330,
+      "sha256": "3ab1401953df434352e738efc4b6c9b906e8dafedac610ae0d5163755a2f9c75"
+    },
+    {
+      "path": "09-Проверки-и-история.md",
+      "bytes": 9319,
+      "sha256": "e8c28cc4b126f0d6ae3856faddaeb994bce855550eee3b54c96039137be2a2cd"
+    },
+    {
+      "path": "ORBIT-Documentation.html",
+      "bytes": 163399,
+      "sha256": "92d1715419065eb8c2366419595a2a6add9315f9b51310f0ea88d1816ad5e6a1"
+    },
+    {
+      "path": "ORBIT-Documentation.md",
+      "bytes": 131668,
+      "sha256": "b3f047ec0ee99c7d2159fbc06c6058ddd9bff24d5327e515a3b15d878ca450ab"
+    },
+    {
+      "path": "examples/local-preview.mjs",
+      "bytes": 1475,
+      "sha256": "eb56a5721c7b39e61f7dce392b00c7f0adcaf20df5c12799111e64a66b64e83f"
+    },
+    {
+      "path": "examples/mcp-requests.json",
+      "bytes": 13751,
+      "sha256": "053bbe398b8a2108b6fe1b042446cda818fb82393fc0d704092c3097ed84760f"
+    },
+    {
+      "path": "reference/default-project.json",
+      "bytes": 7136,
+      "sha256": "0b27698204e316d5ef5fe2fb5ebe8054358073b656d057d3349619091e4c8c26"
+    },
+    {
+      "path": "reference/instruments.json",
+      "bytes": 19414,
+      "sha256": "afb0d29fc1681bade858db6a2a5b75920f64b8f0cd9bc5fc266e9b2ed268493b"
+    },
+    {
+      "path": "reference/mcp-tools.json",
+      "bytes": 23391,
+      "sha256": "50aead086fda38bde690d91f025630db03eb76ab994d5dbb28bd1fd6ea352595"
+    },
+    {
+      "path": "reference/project.schema.json",
+      "bytes": 12160,
+      "sha256": "eb09ea00a3bb455078acdd7aaa42711ef3d0a81fefac27c189f8f13c9e0545b1"
+    },
+    {
+      "path": "reference/scales-and-effects.json",
+      "bytes": 1096,
+      "sha256": "21c5d8c80d14c9ebfc3d8712dd6222cc79bffe617d0ee495760c26add5b6d14b"
+    },
+    {
+      "path": "reference/site-identifiers.json",
+      "bytes": 639,
+      "sha256": "f31353be93499fbba9fc14c21c07fced3bac7336ef4c7c8997122eca1451d9dc"
+    },
+    {
+      "path": "reference/verification.json",
+      "bytes": 458,
+      "sha256": "240d348d518d525905d41846874af31bd211bdda97567119fb05d986f32add29"
+    },
+    {
+      "path": "source/orbit-mcp-source.zip",
+      "bytes": 139556,
+      "sha256": "fea413d92cd507789b13dd2cebdbfa88ca4a77ad03a4bb5bed76510f4521feee"
+    }
+  ]
+}

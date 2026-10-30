@@ -1,0 +1,13 @@
+{
+  "source_commit": "6550ce0988f9f51ea24905cb374491a3e7b3405d",
+  "site_url": "https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/",
+  "project_id": "appgprj_6ae3255ff4f881919a4b6b2b62034fb8",
+  "mcp_url": "https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/mcp",
+  "oauth_resource": "https://orbit-keyboard-studio-29oct.druidbeat.chatgpt.site/mcp",
+  "plugin_id": "plugin_asdk_app_sites_44966f9a28748191a6c5769b49678ba7",
+  "last_confirmed_deployment": "appgdep_6ae44413c7988191b596949dd4c0cd7a",
+  "package_version": "2.0.0",
+  "project_version": 1,
+  "documentation_date": "2026-10-30",
+  "timezone": "Europe/Moscow"
+}

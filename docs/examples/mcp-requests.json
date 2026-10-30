@@ -1,0 +1,600 @@
+{
+  "instructions": "Выберите свою сессию; замените SESSION_ID/COMMAND_ID. Примеры независимы, не запускайте всё подряд. Для sound сначала Start Audio. Загрузка проекта заменяет текущий проект.",
+  "harp_sequence": [
+    {
+      "name": "orbit_list_sessions",
+      "arguments": {}
+    },
+    {
+      "name": "orbit_configure",
+      "arguments": {
+        "session_id": "SESSION_ID",
+        "instrument_id": 24
+      }
+    },
+    {
+      "name": "orbit_play_notes",
+      "arguments": {
+        "session_id": "SESSION_ID",
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "duration_beats": 4,
+        "velocity": 0.8,
+        "respect_scale": false
+      }
+    }
+  ],
+  "examples": [
+    {
+      "name": "orbit_list_instruments",
+      "arguments": {}
+    },
+    {
+      "name": "orbit_list_sessions",
+      "arguments": {}
+    },
+    {
+      "name": "orbit_get_state",
+      "arguments": {}
+    },
+    {
+      "name": "orbit_get_project",
+      "arguments": {}
+    },
+    {
+      "name": "orbit_configure",
+      "arguments": {
+        "instrument_id": 24,
+        "bpm": 110,
+        "fx": {
+          "reverb": {
+            "on": true,
+            "a": 2.5,
+            "b": 0.25
+          }
+        }
+      }
+    },
+    {
+      "name": "orbit_transport",
+      "arguments": {
+        "action": "play"
+      }
+    },
+    {
+      "name": "orbit_play_notes",
+      "arguments": {
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "duration_beats": 4,
+        "velocity": 0.8,
+        "respect_scale": false
+      }
+    },
+    {
+      "name": "orbit_trigger_pad",
+      "arguments": {
+        "pad": 0,
+        "mode": "chord",
+        "duration_beats": 2
+      }
+    },
+    {
+      "name": "orbit_set_pattern",
+      "arguments": {
+        "length": 16,
+        "replace": true,
+        "melody": [
+          {
+            "step": 0,
+            "note": 60,
+            "duration_steps": 4
+          }
+        ],
+        "drums": [
+          {
+            "drum": "kick",
+            "steps": [
+              0,
+              4,
+              8,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "orbit_edit_notes",
+      "arguments": {
+        "replace": true,
+        "notes": [
+          {
+            "note": 60,
+            "start_step": 0,
+            "duration_steps": 4,
+            "velocity": 0.75
+          }
+        ]
+      }
+    },
+    {
+      "name": "orbit_generate_progression",
+      "arguments": {
+        "genre": "House"
+      }
+    },
+    {
+      "name": "orbit_history",
+      "arguments": {
+        "action": "undo"
+      }
+    },
+    {
+      "name": "orbit_export",
+      "arguments": {
+        "format": "json"
+      }
+    },
+    {
+      "name": "orbit_command_status",
+      "arguments": {
+        "command_id": "COMMAND_ID"
+      }
+    },
+    {
+      "name": "orbit_load_project",
+      "arguments": {
+        "project": {
+          "version": 1,
+          "name": "Новая сессия",
+          "bpm": 118,
+          "instrument": 2,
+          "root": 9,
+          "scale": "minor",
+          "scaleLock": true,
+          "octave": 3,
+          "octaves": 3,
+          "velocity": 0.78,
+          "sustain": false,
+          "loop": true,
+          "metronome": false,
+          "padMode": "chord",
+          "chordType": "auto",
+          "length": 16,
+          "pattern": {
+            "melody": [
+              {
+                "on": true,
+                "note": 57,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 57,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 67,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 67,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 65,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 65,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": true,
+                "note": 55,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 55,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 57,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 57,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 67,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 67,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 65,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 65,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 64,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 60,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 55,
+                "velocity": 0.65,
+                "duration": 1.5
+              },
+              {
+                "on": false,
+                "note": 55,
+                "velocity": 0.65,
+                "duration": 1.5
+              }
+            ],
+            "drums": [
+              [
+                true,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              [
+                false,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            ]
+          },
+          "events": [],
+          "sound": {
+            "attack": 0.025,
+            "decay": 0.3,
+            "sustain": 0.5,
+            "release": 0.7,
+            "cutoff": 5000,
+            "resonance": 1.2,
+            "volume": -15,
+            "pan": 0
+          },
+          "fx": {
+            "reverb": {
+              "on": true,
+              "a": 2.5,
+              "b": 0.2
+            },
+            "delay": {
+              "on": false,
+              "a": 0.3,
+              "b": 0.22
+            },
+            "distortion": {
+              "on": false,
+              "a": 0.25,
+              "b": 0.25
+            },
+            "chorus": {
+              "on": false,
+              "a": 1.7,
+              "b": 0.3
+            },
+            "phaser": {
+              "on": false,
+              "a": 0.7,
+              "b": 0.3
+            },
+            "filter": {
+              "on": false,
+              "a": 4500,
+              "b": 1.3
+            },
+            "tremolo": {
+              "on": false,
+              "a": 5,
+              "b": 0.4
+            },
+            "compressor": {
+              "on": true,
+              "a": -22,
+              "b": 3
+            }
+          },
+          "arp": {
+            "on": false,
+            "mode": "up",
+            "rate": "16n",
+            "oct": 1,
+            "gate": 0.65
+          },
+          "swing": 0,
+          "humanize": false,
+          "tracks": [
+            {
+              "vol": 85,
+              "mute": false
+            },
+            {
+              "vol": 78,
+              "mute": false
+            },
+            {
+              "vol": 72,
+              "mute": false
+            },
+            {
+              "vol": 82,
+              "mute": false
+            }
+          ],
+          "samples": [],
+          "samplePlayback": "one",
+          "sampleVolume": 0.8,
+          "visualMode": "wave",
+          "xyX": "cutoff",
+          "xyY": "reverb",
+          "gameStats": {
+            "score": 0,
+            "best": 0,
+            "badges": []
+          }
+        }
+      }
+    }
+  ]
+}

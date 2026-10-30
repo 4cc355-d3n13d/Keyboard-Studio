@@ -1,0 +1,1 @@
+{"name":"orbit-music-studio","version":"2.0.0","private":true,"type":"module","scripts":{"build":"node scripts/build-mcp.mjs","test":"node --test tests/mcp.test.mjs"}}

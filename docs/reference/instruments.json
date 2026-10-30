@@ -1,0 +1,926 @@
+[
+  {
+    "name": "Grand Piano",
+    "description": "Мягкое синтезированное фортепиано",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 2,
+    "modulationIndex": 1.4,
+    "env": [
+      0.005,
+      1.5,
+      0.12,
+      1.4
+    ],
+    "cutoff": 8500,
+    "q": 0.7,
+    "vol": -9,
+    "id": 0,
+    "ui_number": 1,
+    "category": "Клавишные",
+    "midi_program_zero_based": 0
+  },
+  {
+    "name": "Electric Piano",
+    "description": "Колокольный FM-тембр с тёплым хвостом",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 3,
+    "modulationIndex": 2.8,
+    "env": [
+      0.008,
+      0.8,
+      0.3,
+      1.1
+    ],
+    "cutoff": 6500,
+    "q": 0.8,
+    "vol": -10,
+    "id": 1,
+    "ui_number": 2,
+    "category": "Клавишные",
+    "midi_program_zero_based": 4
+  },
+  {
+    "name": "Analog Synth",
+    "description": "Тёплый полифонический синтезатор",
+    "voice": "Synth",
+    "type": "sawtooth",
+    "env": [
+      0.025,
+      0.3,
+      0.5,
+      0.7
+    ],
+    "cutoff": 5000,
+    "q": 1.2,
+    "vol": -15,
+    "id": 2,
+    "ui_number": 3,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 80
+  },
+  {
+    "name": "Synth Bass",
+    "description": "Плотный фундамент для вашего грува",
+    "voice": "Mono",
+    "type": "square",
+    "env": [
+      0.008,
+      0.2,
+      0.35,
+      0.15
+    ],
+    "cutoff": 800,
+    "q": 2,
+    "vol": -12,
+    "id": 3,
+    "ui_number": 4,
+    "category": "Бас",
+    "midi_program_zero_based": 38
+  },
+  {
+    "name": "Acid Bass",
+    "description": "Резонансный бас с характером 303",
+    "voice": "Mono",
+    "type": "sawtooth",
+    "env": [
+      0.003,
+      0.18,
+      0.15,
+      0.12
+    ],
+    "cutoff": 1400,
+    "q": 7,
+    "vol": -13,
+    "id": 4,
+    "ui_number": 5,
+    "category": "Бас",
+    "midi_program_zero_based": 38
+  },
+  {
+    "name": "Pluck Synth",
+    "description": "Короткие ноты, большие мелодии",
+    "voice": "Synth",
+    "type": "triangle",
+    "env": [
+      0.002,
+      0.35,
+      0.03,
+      0.5
+    ],
+    "cutoff": 9000,
+    "q": 1,
+    "vol": -6,
+    "id": 5,
+    "ui_number": 6,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 10
+  },
+  {
+    "name": "Ambient Pad",
+    "description": "Медленно раскрывающаяся атмосфера",
+    "voice": "AM",
+    "type": "sine",
+    "harmonicity": 1.5,
+    "env": [
+      0.8,
+      0.6,
+      0.65,
+      2.4
+    ],
+    "cutoff": 4200,
+    "q": 0.6,
+    "vol": -10,
+    "id": 6,
+    "ui_number": 7,
+    "category": "Пэды и атмосферы",
+    "midi_program_zero_based": 89
+  },
+  {
+    "name": "Lead Synth",
+    "description": "Яркий голос для главной мелодии",
+    "voice": "Synth",
+    "type": "sawtooth",
+    "env": [
+      0.015,
+      0.15,
+      0.65,
+      0.25
+    ],
+    "cutoff": 7200,
+    "q": 2,
+    "vol": -16,
+    "id": 7,
+    "ui_number": 8,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 81
+  },
+  {
+    "name": "Drawbar Organ",
+    "description": "Тёплые обертоны электромеханического органа",
+    "voice": "Synth",
+    "type": "custom",
+    "partials": [
+      1,
+      0.45,
+      0.7,
+      0.12,
+      0.3,
+      0.08,
+      0.12,
+      0.03
+    ],
+    "env": [
+      0.006,
+      0.08,
+      0.95,
+      0.1
+    ],
+    "cutoff": 9500,
+    "q": 0.5,
+    "vol": -13,
+    "id": 8,
+    "ui_number": 9,
+    "category": "Клавишные",
+    "midi_program_zero_based": 16
+  },
+  {
+    "name": "Cathedral Organ",
+    "description": "Глубокий орган с открытыми квинтами",
+    "voice": "Synth",
+    "type": "custom",
+    "partials": [
+      1,
+      0.7,
+      0.5,
+      0.28,
+      0.2,
+      0.12,
+      0.08,
+      0.06
+    ],
+    "env": [
+      0.045,
+      0.2,
+      0.9,
+      1.1
+    ],
+    "cutoff": 11000,
+    "q": 0.5,
+    "vol": -13,
+    "id": 9,
+    "ui_number": 10,
+    "category": "Клавишные",
+    "midi_program_zero_based": 19
+  },
+  {
+    "name": "String Ensemble",
+    "description": "Мягкий ансамбль расстроенных струнных голосов",
+    "voice": "Synth",
+    "type": "fatsawtooth",
+    "count": 3,
+    "spread": 14,
+    "vibrato": 0.035,
+    "vibratoRate": 5.2,
+    "env": [
+      0.42,
+      0.55,
+      0.7,
+      1.6
+    ],
+    "cutoff": 3900,
+    "q": 0.65,
+    "vol": -16,
+    "id": 10,
+    "ui_number": 11,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 48
+  },
+  {
+    "name": "Brass Section",
+    "description": "Медные духовые с яркой раскрывающейся атакой",
+    "voice": "Mono",
+    "type": "sawtooth",
+    "filterQ": 1.1,
+    "filterEnvelope": {
+      "attack": 0.09,
+      "decay": 0.35,
+      "sustain": 0.6,
+      "release": 0.22,
+      "baseFrequency": 260,
+      "octaves": 4
+    },
+    "vibrato": 0.025,
+    "vibratoRate": 5.5,
+    "env": [
+      0.055,
+      0.25,
+      0.7,
+      0.32
+    ],
+    "cutoff": 6800,
+    "q": 0.8,
+    "vol": -15,
+    "id": 11,
+    "ui_number": 12,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 61
+  },
+  {
+    "name": "Concert Flute",
+    "description": "Мягкий синусовый голос с лёгким вибрато",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 2,
+    "modulationIndex": 0.16,
+    "modEnv": {
+      "attack": 0.06,
+      "decay": 0.25,
+      "sustain": 0.55,
+      "release": 0.12
+    },
+    "vibrato": 0.055,
+    "vibratoRate": 5.1,
+    "env": [
+      0.07,
+      0.22,
+      0.8,
+      0.3
+    ],
+    "cutoff": 5200,
+    "q": 0.5,
+    "vol": -7,
+    "id": 12,
+    "ui_number": 13,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 73
+  },
+  {
+    "name": "Clarinet",
+    "description": "Деревянный тембр с нечётными гармониками",
+    "voice": "Synth",
+    "type": "custom",
+    "partials": [
+      1,
+      0,
+      0.46,
+      0,
+      0.2,
+      0,
+      0.09,
+      0,
+      0.035
+    ],
+    "vibrato": 0.025,
+    "vibratoRate": 4.8,
+    "env": [
+      0.055,
+      0.18,
+      0.72,
+      0.22
+    ],
+    "cutoff": 4100,
+    "q": 0.8,
+    "vol": -9,
+    "id": 13,
+    "ui_number": 14,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 71
+  },
+  {
+    "name": "Crystal Bells",
+    "description": "Хрустальные FM-колокольчики с длинным затуханием",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 3.5,
+    "modulationIndex": 6,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 1.1,
+      "sustain": 0,
+      "release": 1.8
+    },
+    "env": [
+      0.001,
+      2.6,
+      0.02,
+      2.8
+    ],
+    "cutoff": 14000,
+    "q": 0.4,
+    "vol": -9,
+    "id": 14,
+    "ui_number": 15,
+    "category": "Колокольчики и перкуссия",
+    "midi_program_zero_based": 14
+  },
+  {
+    "name": "Marimba",
+    "description": "Короткий деревянный удар и округлый бас",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 4,
+    "modulationIndex": 1.7,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 0.09,
+      "sustain": 0,
+      "release": 0.08
+    },
+    "env": [
+      0.001,
+      0.48,
+      0,
+      0.22
+    ],
+    "cutoff": 6400,
+    "q": 0.5,
+    "vol": -6,
+    "id": 15,
+    "ui_number": 16,
+    "category": "Колокольчики и перкуссия",
+    "midi_program_zero_based": 12
+  },
+  {
+    "name": "Vibraphone",
+    "description": "Мягкий металлический звон с деликатным вибрато",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 4,
+    "modulationIndex": 0.75,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 0.3,
+      "sustain": 0.12,
+      "release": 0.7
+    },
+    "vibrato": 0.045,
+    "vibratoRate": 4.2,
+    "env": [
+      0.003,
+      1.9,
+      0.08,
+      1.7
+    ],
+    "cutoff": 10000,
+    "q": 0.45,
+    "vol": -7,
+    "id": 16,
+    "ui_number": 17,
+    "category": "Колокольчики и перкуссия",
+    "midi_program_zero_based": 11
+  },
+  {
+    "name": "Kalimba",
+    "description": "Звонкие язычки с коротким металлическим призвуком",
+    "voice": "FM",
+    "type": "triangle",
+    "harmonicity": 3,
+    "modulationIndex": 2.2,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 0.055,
+      "sustain": 0,
+      "release": 0.04
+    },
+    "env": [
+      0.001,
+      0.58,
+      0,
+      0.45
+    ],
+    "cutoff": 7800,
+    "q": 0.6,
+    "vol": -7,
+    "id": 17,
+    "ui_number": 18,
+    "category": "Колокольчики и перкуссия",
+    "midi_program_zero_based": 108
+  },
+  {
+    "name": "Nylon Guitar",
+    "description": "Щипковый тембр с тёплой атакой нейлоновой струны",
+    "voice": "FM",
+    "type": "triangle",
+    "harmonicity": 1,
+    "modulationIndex": 1.15,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 0.12,
+      "sustain": 0.02,
+      "release": 0.2
+    },
+    "env": [
+      0.003,
+      0.85,
+      0.06,
+      0.55
+    ],
+    "cutoff": 4300,
+    "q": 0.65,
+    "vol": -7,
+    "id": 18,
+    "ui_number": 19,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 24
+  },
+  {
+    "name": "Funk Clavinet",
+    "description": "Сухой, упругий клавишный щипок для фанка",
+    "voice": "Synth",
+    "type": "custom",
+    "partials": [
+      1,
+      0.42,
+      0.66,
+      0.2,
+      0.36,
+      0.12,
+      0.18
+    ],
+    "env": [
+      0.001,
+      0.19,
+      0.08,
+      0.095
+    ],
+    "cutoff": 5800,
+    "q": 2.5,
+    "vol": -11,
+    "id": 19,
+    "ui_number": 20,
+    "category": "Клавишные",
+    "midi_program_zero_based": 7
+  },
+  {
+    "name": "Super Saw",
+    "description": "Пять широких пилообразных голосов для транса",
+    "voice": "Synth",
+    "type": "fatsawtooth",
+    "count": 5,
+    "spread": 32,
+    "env": [
+      0.018,
+      0.28,
+      0.66,
+      0.85
+    ],
+    "cutoff": 9500,
+    "q": 0.8,
+    "vol": -18,
+    "id": 20,
+    "ui_number": 21,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 81
+  },
+  {
+    "name": "8-bit Lead",
+    "description": "Чёткая квадратная волна в духе игровых консолей",
+    "voice": "Synth",
+    "type": "square8",
+    "env": [
+      0.001,
+      0.09,
+      0.65,
+      0.055
+    ],
+    "cutoff": 12000,
+    "q": 0.5,
+    "vol": -16,
+    "id": 21,
+    "ui_number": 22,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 80
+  },
+  {
+    "name": "Reese Bass",
+    "description": "Два расстроенных осциллятора и густой низ",
+    "voice": "Synth",
+    "type": "fatsawtooth",
+    "count": 2,
+    "spread": 22,
+    "env": [
+      0.016,
+      0.25,
+      0.82,
+      0.24
+    ],
+    "cutoff": 950,
+    "q": 1.8,
+    "vol": -14,
+    "id": 22,
+    "ui_number": 23,
+    "category": "Бас",
+    "midi_program_zero_based": 38
+  },
+  {
+    "name": "Choir Pad",
+    "description": "Синтезированный хоровой гласный с плавным входом",
+    "voice": "Synth",
+    "type": "custom",
+    "partials": [
+      1,
+      0.18,
+      0.3,
+      0.75,
+      0.42,
+      0.15,
+      0.28,
+      0.07
+    ],
+    "vibrato": 0.045,
+    "vibratoRate": 4.6,
+    "env": [
+      0.65,
+      0.65,
+      0.72,
+      2.2
+    ],
+    "cutoff": 3400,
+    "q": 1.4,
+    "vol": -13,
+    "id": 23,
+    "ui_number": 24,
+    "category": "Пэды и атмосферы",
+    "midi_program_zero_based": 52
+  },
+  {
+    "name": "Concert Harp",
+    "description": "Модель щипковой струны с мягким резонансом",
+    "voice": "String",
+    "brightness": 0.16,
+    "pick": 0.28,
+    "ringing": 2.5,
+    "env": [
+      0.004,
+      1.25,
+      0.62,
+      1.2
+    ],
+    "cutoff": 9000,
+    "q": 0.5,
+    "vol": -5,
+    "id": 24,
+    "ui_number": 25,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 46
+  },
+  {
+    "name": "Steel String Guitar",
+    "description": "Яркий щипок стальной струны и открытое затухание",
+    "voice": "String",
+    "brightness": 0.09,
+    "pick": 0.18,
+    "ringing": 2.2,
+    "env": [
+      0.002,
+      0.9,
+      0.55,
+      0.65
+    ],
+    "cutoff": 11500,
+    "q": 0.65,
+    "vol": -5,
+    "id": 25,
+    "ui_number": 26,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 25
+  },
+  {
+    "name": "Muted Electric Guitar",
+    "description": "Плотный приглушённый щипок для ритмичных партий",
+    "voice": "String",
+    "brightness": 0.3,
+    "pick": 0.12,
+    "ringing": 1.1,
+    "buzz": 0.08,
+    "env": [
+      0.001,
+      0.17,
+      0.04,
+      0.08
+    ],
+    "cutoff": 3600,
+    "q": 1.2,
+    "vol": -3,
+    "id": 26,
+    "ui_number": 27,
+    "category": "Струнные и духовые",
+    "midi_program_zero_based": 28
+  },
+  {
+    "name": "Harpsichord",
+    "description": "Сухая клавесинная атака и яркие щипковые гармоники",
+    "voice": "String",
+    "velocityFloor": 0.7,
+    "brightness": 0.07,
+    "pick": 0.37,
+    "ringing": 1.8,
+    "env": [
+      0.001,
+      0.55,
+      0.28,
+      0.16
+    ],
+    "cutoff": 12000,
+    "q": 0.7,
+    "vol": -6,
+    "id": 27,
+    "ui_number": 28,
+    "category": "Клавишные",
+    "midi_program_zero_based": 6
+  },
+  {
+    "name": "808 Bass",
+    "description": "Синусовый бас с падением высоты; попробуйте октавы 1–2",
+    "voice": "Membrane",
+    "type": "sine",
+    "pitchDecay": 0.07,
+    "pitchOctaves": 2.4,
+    "env": [
+      0.002,
+      1.4,
+      0.16,
+      0.38
+    ],
+    "cutoff": 1300,
+    "q": 0.6,
+    "vol": -9,
+    "id": 28,
+    "ui_number": 29,
+    "category": "Бас",
+    "midi_program_zero_based": 38
+  },
+  {
+    "name": "Slap Bass",
+    "description": "Резкий FM-щелчок и упругий басовый корпус",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 1,
+    "modulationIndex": 5.5,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 0.065,
+      "sustain": 0.035,
+      "release": 0.08
+    },
+    "env": [
+      0.001,
+      0.38,
+      0.2,
+      0.18
+    ],
+    "cutoff": 8500,
+    "q": 1.2,
+    "vol": -8,
+    "id": 29,
+    "ui_number": 30,
+    "category": "Бас",
+    "midi_program_zero_based": 36
+  },
+  {
+    "name": "Hoover Synth",
+    "description": "Расстроенная пила с субоктавной модуляцией для рейва",
+    "voice": "AM",
+    "type": "fatsawtooth",
+    "count": 3,
+    "spread": 27,
+    "harmonicity": 0.5,
+    "modulationType": "square",
+    "modEnv": {
+      "attack": 0.02,
+      "decay": 0.45,
+      "sustain": 0.7,
+      "release": 0.3
+    },
+    "env": [
+      0.035,
+      0.3,
+      0.74,
+      0.45
+    ],
+    "cutoff": 6500,
+    "q": 1.4,
+    "vol": -9,
+    "id": 30,
+    "ui_number": 31,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 86
+  },
+  {
+    "name": "Sync Lead",
+    "description": "Спектр синхронизированной пилы и подвижный фильтр",
+    "voice": "Mono",
+    "type": "custom",
+    "partials": [
+      0.1768873005555683,
+      0.30318167161889836,
+      0.4894262271795192,
+      0.11001156229915696,
+      0.2594254662102103,
+      0.13987330112272803,
+      0.03965387185368781,
+      0.2115947829982566,
+      0.022189894403193702,
+      0.03787912472026513,
+      0.14540573851880892,
+      0.033052422614512786,
+      0.08416856181262877,
+      0.07601176221774654,
+      0.024990803549780557,
+      0.10097716275036216,
+      0.021683653328201224,
+      0.009932529192083015,
+      0.0886510493425565,
+      0.015912627383253893,
+      0.04138823765257889,
+      0.057713070408018485,
+      0.018942528629964622,
+      0.06212956722756898,
+      0.023349113786806007,
+      0.004660146156288677,
+      0.06366124961046114,
+      0.008388843297263516,
+      0.021820406130810904,
+      0.048187798102355676,
+      0.014599564619980904,
+      0.04140640209237976
+    ],
+    "filterQ": 2.5,
+    "filterEnvelope": {
+      "attack": 0.018,
+      "decay": 0.65,
+      "sustain": 0.3,
+      "release": 0.2,
+      "baseFrequency": 240,
+      "octaves": 5
+    },
+    "env": [
+      0.006,
+      0.25,
+      0.72,
+      0.24
+    ],
+    "cutoff": 10500,
+    "q": 1.1,
+    "vol": -14,
+    "id": 31,
+    "ui_number": 32,
+    "category": "Синтезаторы",
+    "midi_program_zero_based": 84
+  },
+  {
+    "name": "Accordion",
+    "description": "Три язычковых голоса с лёгкой расстройкой",
+    "voice": "Synth",
+    "type": "fatcustom",
+    "partials": [
+      1,
+      0.58,
+      0.36,
+      0.27,
+      0.15,
+      0.12,
+      0.08,
+      0.06
+    ],
+    "count": 3,
+    "spread": 8,
+    "vibrato": 0.025,
+    "vibratoRate": 5.4,
+    "env": [
+      0.045,
+      0.17,
+      0.88,
+      0.19
+    ],
+    "cutoff": 5100,
+    "q": 0.8,
+    "vol": -13,
+    "id": 32,
+    "ui_number": 33,
+    "category": "Характерные тембры",
+    "midi_program_zero_based": 21
+  },
+  {
+    "name": "Harmonica",
+    "description": "Насыщенные язычковые гармоники и дыхательное вибрато",
+    "voice": "Synth",
+    "type": "custom",
+    "partials": [
+      1,
+      0.14,
+      0.52,
+      0.07,
+      0.24,
+      0.035,
+      0.11,
+      0.02
+    ],
+    "vibrato": 0.08,
+    "vibratoRate": 4.7,
+    "env": [
+      0.055,
+      0.22,
+      0.76,
+      0.18
+    ],
+    "cutoff": 4600,
+    "q": 1.3,
+    "vol": -9,
+    "id": 33,
+    "ui_number": 34,
+    "category": "Характерные тембры",
+    "midi_program_zero_based": 22
+  },
+  {
+    "name": "Sitar",
+    "description": "Щипковая струна с жужжащими обертонами джавари",
+    "voice": "String",
+    "brightness": 0.11,
+    "pick": 0.08,
+    "ringing": 2.8,
+    "buzz": 0.48,
+    "env": [
+      0.002,
+      1.05,
+      0.5,
+      0.75
+    ],
+    "cutoff": 10000,
+    "q": 1.6,
+    "vol": -7,
+    "id": 34,
+    "ui_number": 35,
+    "category": "Характерные тембры",
+    "midi_program_zero_based": 104
+  },
+  {
+    "name": "Steel Pan",
+    "description": "Тёплый металлический удар с почти гармоническим звоном",
+    "voice": "FM",
+    "type": "sine",
+    "harmonicity": 2.01,
+    "modulationIndex": 2.6,
+    "modEnv": {
+      "attack": 0.001,
+      "decay": 0.18,
+      "sustain": 0.025,
+      "release": 0.25
+    },
+    "env": [
+      0.002,
+      1.2,
+      0.025,
+      0.85
+    ],
+    "cutoff": 10500,
+    "q": 0.6,
+    "vol": -7,
+    "id": 35,
+    "ui_number": 36,
+    "category": "Колокольчики и перкуссия",
+    "midi_program_zero_based": 114
+  }
+]

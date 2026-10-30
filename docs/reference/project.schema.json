@@ -1,0 +1,587 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:orbit:project:1:documentation",
+  "title": "ORBIT version 1 — documented normalized project",
+  "description": "Описательная схема сохранённого состояния commit 6550ce0988f9f51ea24905cb374491a3e7b3405d. Импорт дополнительно нормализует и проверяет поля в ProjectStorage.validate; эта схема не исполняется приложением.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "bpm": {
+      "type": "number",
+      "minimum": 40,
+      "maximum": 240
+    },
+    "instrument": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 35
+    },
+    "root": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 11
+    },
+    "scale": {
+      "enum": [
+        "minor",
+        "major",
+        "dorian",
+        "pentatonic",
+        "chromatic"
+      ]
+    },
+    "scaleLock": {
+      "type": "boolean"
+    },
+    "octave": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "octaves": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 4
+    },
+    "velocity": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 1
+    },
+    "sustain": {
+      "type": "boolean"
+    },
+    "loop": {
+      "type": "boolean"
+    },
+    "metronome": {
+      "type": "boolean"
+    },
+    "padMode": {
+      "enum": [
+        "chord",
+        "drum",
+        "sample",
+        "scale"
+      ]
+    },
+    "chordType": {
+      "enum": [
+        "auto",
+        "major",
+        "minor",
+        "seventh",
+        "sus2",
+        "sus4",
+        "dim"
+      ]
+    },
+    "length": {
+      "enum": [
+        16,
+        32
+      ]
+    },
+    "pattern": {
+      "type": "object",
+      "properties": {
+        "melody": {
+          "type": "array",
+          "minItems": 32,
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "properties": {
+              "on": {
+                "type": "boolean"
+              },
+              "note": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 127
+              },
+              "velocity": {
+                "type": "number",
+                "minimum": 0.05,
+                "maximum": 1
+              },
+              "duration": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 32
+              }
+            },
+            "required": [
+              "on",
+              "note",
+              "velocity",
+              "duration"
+            ]
+          }
+        },
+        "drums": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "array",
+            "minItems": 32,
+            "maxItems": 32,
+            "items": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "required": [
+        "melody",
+        "drums"
+      ]
+    },
+    "events": {
+      "type": "array",
+      "maxItems": 4096,
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "note",
+              "drum",
+              "sample"
+            ]
+          },
+          "note": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 31.99
+          },
+          "duration": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 32
+          },
+          "velocity": {
+            "type": "number",
+            "minimum": 0.05,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "note",
+          "start",
+          "duration",
+          "velocity"
+        ]
+      }
+    },
+    "sound": {
+      "type": "object",
+      "properties": {
+        "attack": {
+          "type": "number",
+          "minimum": 0.001,
+          "maximum": 2
+        },
+        "decay": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 3
+        },
+        "sustain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "release": {
+          "type": "number",
+          "minimum": 0.03,
+          "maximum": 5
+        },
+        "cutoff": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 16000
+        },
+        "resonance": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 12
+        },
+        "volume": {
+          "type": "number",
+          "minimum": -30,
+          "maximum": 0
+        },
+        "pan": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "fx": {
+      "type": "object",
+      "properties": {
+        "reverb": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 0.3,
+              "maximum": 6
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.8
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "delay": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 0.05,
+              "maximum": 0.75
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.8
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "distortion": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.95
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.8
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "chorus": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 8
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "phaser": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 6
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "filter": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 100,
+              "maximum": 16000
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 12
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "tremolo": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": 0.5,
+              "maximum": 14
+            },
+            "b": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "compressor": {
+          "type": "object",
+          "properties": {
+            "on": {
+              "type": "boolean"
+            },
+            "a": {
+              "type": "number",
+              "minimum": -45,
+              "maximum": 0
+            },
+            "b": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 12
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "arp": {
+      "type": "object",
+      "properties": {
+        "on": {
+          "type": "boolean"
+        },
+        "mode": {
+          "enum": [
+            "up",
+            "down",
+            "updown",
+            "random",
+            "played"
+          ]
+        },
+        "rate": {
+          "enum": [
+            "4n",
+            "8n",
+            "16n",
+            "32n"
+          ]
+        },
+        "oct": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "gate": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 0.95
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "swing": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.65
+    },
+    "humanize": {
+      "type": "boolean"
+    },
+    "tracks": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "properties": {
+          "vol": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "mute": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "vol",
+          "mute"
+        ]
+      }
+    },
+    "samples": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "data": {
+                "type": "string",
+                "pattern": "^data:audio/"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        ]
+      }
+    },
+    "samplePlayback": {
+      "enum": [
+        "one",
+        "gate",
+        "loop"
+      ]
+    },
+    "sampleVolume": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "visualMode": {
+      "enum": [
+        "wave",
+        "spectrum",
+        "particles",
+        "geometry"
+      ]
+    },
+    "xyX": {
+      "enum": [
+        "cutoff",
+        "reverb",
+        "delay",
+        "distortion"
+      ]
+    },
+    "xyY": {
+      "enum": [
+        "cutoff",
+        "reverb",
+        "delay",
+        "distortion"
+      ]
+    },
+    "gameStats": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "type": "number"
+        },
+        "best": {
+          "type": "number"
+        },
+        "badges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "score",
+        "best",
+        "badges"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "name",
+    "bpm",
+    "instrument",
+    "root",
+    "scale",
+    "scaleLock",
+    "octave",
+    "octaves",
+    "velocity",
+    "sustain",
+    "loop",
+    "metronome",
+    "padMode",
+    "chordType",
+    "length",
+    "pattern",
+    "events",
+    "sound",
+    "fx",
+    "arp",
+    "swing",
+    "humanize",
+    "tracks",
+    "samples",
+    "samplePlayback",
+    "sampleVolume",
+    "visualMode",
+    "xyX",
+    "xyY",
+    "gameStats"
+  ]
+}
